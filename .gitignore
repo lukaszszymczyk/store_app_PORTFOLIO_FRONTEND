@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+#output
+/dist
+/build
+
+#IDE
+/.idea
+
+#environment variable files
+.env
+
+#css styles
+*.css
