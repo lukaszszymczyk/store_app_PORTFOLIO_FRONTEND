@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+.header {
+  height: 5vh;
+  width: 100%;
+  background: $color-dark;
+  color: $color-text-secondary;
+  padding: 0 8px;
+
+  .links {
+    padding: 16px 0;
+
+    .element {
+      margin: 0 16px;
+      text-decoration: none;
+    }
+  }
+}
