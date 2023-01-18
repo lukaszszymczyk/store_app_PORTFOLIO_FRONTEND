@@ -27,6 +27,8 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/prefer-default-export": 0,
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
