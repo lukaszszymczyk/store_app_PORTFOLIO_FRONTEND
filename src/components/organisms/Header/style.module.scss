@@ -7,7 +7,7 @@
   color: $color-text-secondary;
   padding: 0 8px;
 
-  .links {
+  &Links {
     padding: 16px 0;
 
     .element {
@@ -16,3 +16,7 @@
     }
   }
 }
+
+// header
+// headerLinks
+// headerLinksElement

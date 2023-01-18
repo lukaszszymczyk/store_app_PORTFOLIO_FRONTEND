@@ -3,7 +3,8 @@ import { HomeTemplate } from "components/templates/HomeTemplate";
 import { useProducts } from "./useProducts";
 
 export function Home(): JSX.Element {
-  const products = useProducts() || [];
+  const { products } = useProducts();
 
-  return <HomeTemplate products={products} />; // <Footer />
+  if (!products) return <>Error</>;
+  return <HomeTemplate products={products} />;
 }
