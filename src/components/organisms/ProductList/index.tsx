@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductDetails } from "components/molecules/ProductDetails";
+import { ProductListDetails } from "components/molecules/ProductListDetails";
 import { Product } from "services/api/interfaces/Product";
 import styles from "./style.module.scss";
 
@@ -11,7 +11,7 @@ export function ProductList({ products }: ProductListProps) {
   return (
     <div className={styles.productList}>
       {products.map((product) => (
-        <ProductDetails key={product.id} product={product} />
+        <ProductListDetails key={product.id} product={product} />
       ))}
     </div>
   );

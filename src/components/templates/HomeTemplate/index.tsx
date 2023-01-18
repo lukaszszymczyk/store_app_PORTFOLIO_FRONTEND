@@ -9,5 +9,3 @@ export interface HomeTemplateProps {
 export function HomeTemplate({ products }: HomeTemplateProps): JSX.Element {
   return <ProductList products={products} />;
 }
-
-// TODO: dodac do templatki inne elementy jak: stopke i naglowek
