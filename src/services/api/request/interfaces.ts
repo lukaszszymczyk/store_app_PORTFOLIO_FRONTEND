@@ -9,12 +9,7 @@ export enum HttpMethodType {
   DELETE,
 }
 
-export interface UrlParameter {
-  key: string;
-  value: string;
-}
-
-// TODO: dodac dla POST'a dane do przekazania
+// TODO: add body for POST
 export interface RequestParams {
   path: string;
   methodType: HttpMethodType;
@@ -24,4 +19,14 @@ export interface RequestParams {
 export interface Response<T> {
   data: T | null;
   errorMessage: string;
+}
+
+export interface UseRequestCreatorState<ResponseDataType> {
+  result: ResponseDataType | null;
+  isLoading: boolean;
+  errorMessage: string;
+}
+
+export interface UseRequestCreatorActions {
+  request: () => void;
 }

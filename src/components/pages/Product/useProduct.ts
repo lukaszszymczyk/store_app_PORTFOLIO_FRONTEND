@@ -1,7 +1,7 @@
 import { Product } from "services/api/interfaces/Product";
 import { useRequestCreator } from "services/api/request/useRequestCreator";
 import { HttpMethodType } from "services/api/request/interfaces";
-import { GET_PRODUCT } from "services/api/apiPaths";
+import { GET_PRODUCT_API_PATH } from "services/api/apiPaths";
 import { useEffect } from "react";
 
 export interface UseProductOutput {
@@ -15,7 +15,7 @@ export const useProduct = (id: string): UseProductOutput => {
     { result: product, isLoading, errorMessage },
     { request: getProduct },
   ] = useRequestCreator<Product>({
-    path: GET_PRODUCT(id),
+    path: GET_PRODUCT_API_PATH(id),
     methodType: HttpMethodType.GET,
   });
 

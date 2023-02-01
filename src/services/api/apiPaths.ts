@@ -1,2 +1,2 @@
-export const GET_ALL_PRODUCTS = "/products";
-export const GET_PRODUCT = (id: string) => `/products/${id}`; // ??
+export const ALL_PRODUCTS_API_PATH = "/products";
+export const GET_PRODUCT_API_PATH = (id: string) => `/products/${id}`;
