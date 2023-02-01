@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+.buttonElement {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 32px;
+
+  &Primary {
+    color: $color-text-primary;
+  }
+
+  &Secondary {
+    color: $color-text-secondary;
+  }
+}

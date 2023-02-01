@@ -9,7 +9,7 @@ export enum RequestMethodType {
   DELETE,
 }
 
-// TODO: dodac dla POST'a dane do przekazania
+// TODO: add body for POST'a
 export interface RequestParams {
   path: string;
   methodType: RequestMethodType;
