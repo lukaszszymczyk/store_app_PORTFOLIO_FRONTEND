@@ -1,17 +1,20 @@
 import React from "react";
-import { CART_PAGE, HOME_PAGE } from "config/constants";
+import { Link } from "react-router-dom";
+import { CART_PAGE_PATH, HOME_PAGE_PATH } from "config/constants";
 import styles from "./style.module.scss";
+
+// https://reactrouter.com/en/main/components/link
 
 export function Header() {
   return (
     <div className={styles.header}>
       <nav className={styles.links}>
-        <a className={styles.headerLinks} href={HOME_PAGE}>
+        <Link className={styles.headerLinks} to="/">
           Home
-        </a>
-        <a className={styles.element} href={CART_PAGE}>
+        </Link>
+        <Link className={styles.element} to="/cart">
           Cart
-        </a>
+        </Link>
       </nav>
     </div>
   );

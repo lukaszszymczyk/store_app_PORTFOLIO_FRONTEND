@@ -1,21 +1,13 @@
 import { useState } from "react";
 import { request as apiRequest } from "services/api/request/request";
-import { RequestParams } from "services/api/request/interfaces";
-
-export interface UseRequestCreatorParams extends RequestParams {}
-
-export interface UseRequestCreatorState<ResponseDataType> {
-  result: ResponseDataType | null;
-  isLoading: boolean;
-  errorMessage: string;
-}
-
-export interface UseRequestCreatorActions {
-  request: () => void;
-}
+import {
+  RequestParams,
+  UseRequestCreatorActions,
+  UseRequestCreatorState,
+} from "services/api/request/interfaces";
 
 export const useRequestCreator = <ResponseDataType>(
-  requestParams: UseRequestCreatorParams
+  requestParams: RequestParams
 ): [UseRequestCreatorState<ResponseDataType>, UseRequestCreatorActions] => {
   const [result, setResult] = useState<ResponseDataType | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
