@@ -7,12 +7,17 @@
   display: inline-block;
   font-size: 16px;
   height: 32px;
+  width: 128px;
+  border-radius: 4px;
+  cursor: pointer;
 
   &Primary {
-    color: $color-text-primary;
+    background-color: $color-dark;
+    color: $color-background;
   }
 
   &Secondary {
-    color: $color-text-secondary;
+    background-color: $color-text-secondary;
+    color: $color-text-primary;
   }
 }

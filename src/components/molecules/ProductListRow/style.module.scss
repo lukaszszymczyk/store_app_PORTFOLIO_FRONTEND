@@ -1,5 +1,16 @@
-.productListCard {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
+@import "src/styles/variables";
+
+.productListRow {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  padding: 8px;
+  grid-gap: 16px;
+
+  &Link {
+    text-decoration: none;
+  }
+
+  &Option {
+    align-self: center;
+  }
 }
