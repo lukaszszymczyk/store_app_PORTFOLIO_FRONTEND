@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .productTemplate {
-  padding: 32px;
+  padding: $spacing-xl;
 }
