@@ -8,10 +8,10 @@ export interface CartItemListProps {
 
 export function CartItemList({ cartItems }: CartItemListProps) {
   return (
-    <div>
+    <>
       {cartItems.map((item) => (
         <CartItemRow key={item.id} cartItem={item} />
       ))}
-    </div>
+    </>
   );
 }

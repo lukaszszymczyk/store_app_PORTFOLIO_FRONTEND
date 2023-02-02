@@ -21,7 +21,7 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
   };
 
   return (
-    <div className={styles.productListRow}>
+    <div id="product-list-row" className={styles.productListRow}>
       <Link
         className={styles.productListRowLink}
         to={GET_PRODUCT_PAGE_PATH(id.toString())}
