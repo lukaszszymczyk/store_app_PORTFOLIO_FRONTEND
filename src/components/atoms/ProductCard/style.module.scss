@@ -3,25 +3,25 @@
 .productCard {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 3fr 0.5fr;
-  height: 12vh;
-  color: $color-text-primary;
+  height: calc(2 * #{$default-element-height});
+  color: $color-text-secondary;
 
   &Image {
-    max-height: 10vh;
-    max-width: 10vh;
+    max-height: calc(2 * #{$default-element-height} - 2vh);
+    max-width: calc(2 * #{$default-element-height} - 2vh);
     align-self: center;
-    padding: 8px;
+    padding: $spacing-sm;
   }
 
   &Title {
     font-weight: bold;
     align-self: center;
-    padding: 8px;
+    padding: $spacing-sm;
   }
 
   &Description {
     align-self: center;
-    padding: 8px;
+    padding: $spacing-sm;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -29,6 +29,6 @@
 
   &Item {
     align-self: center;
-    padding: 8px;
+    padding: $spacing-sm;
   }
 }
