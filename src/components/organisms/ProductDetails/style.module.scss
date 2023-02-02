@@ -1,0 +1,24 @@
+.productDetails {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 16px;
+
+  &Image {
+    max-height: 50vh;
+    max-width: 50vw;
+  }
+}
+
+.productDetailsInfo {
+  display: flex;
+  flex-direction: column;
+
+  &Header {
+    padding: 8px;
+
+    &Title {
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}
