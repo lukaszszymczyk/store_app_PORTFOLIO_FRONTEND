@@ -4,19 +4,16 @@
   height: 5vh;
   width: 100%;
   background: $color-dark;
-  color: $color-text-secondary;
-  padding: 0 8px;
+  color: $color-background;
+  padding: 0 32px;
 
   &Links {
     padding: 16px 0;
 
-    .element {
-      margin: 0 16px;
+    &Element {
+      margin: 0 32px;
+      color: $color-background;
       text-decoration: none;
     }
   }
 }
-
-// header
-// headerLinks
-// headerLinksElement

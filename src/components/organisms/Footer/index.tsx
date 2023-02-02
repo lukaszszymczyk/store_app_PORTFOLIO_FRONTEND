@@ -2,5 +2,9 @@ import React from "react";
 import styles from "./style.module.scss";
 
 export function Footer() {
-  return <p className={styles.footer}>footer</p>;
+  return (
+    <div className={styles.footer}>
+      <p className={styles.footerText}>Store App</p>
+    </div>
+  );
 }
