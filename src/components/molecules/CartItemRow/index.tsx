@@ -20,7 +20,7 @@ export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
   };
 
   return (
-    <div className={styles.cartItemRow}>
+    <div id="cart-item-row" className={styles.cartItemRow}>
       <ProductCard product={product} />
       <input value={quantity} className={styles.cartItemRowQuantity} />
       <div className={styles.cartItemRowActions}>

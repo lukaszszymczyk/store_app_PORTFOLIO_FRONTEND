@@ -1,12 +1,15 @@
 @import "src/styles/variables";
 
 .footer {
+  position: absolute;
+  bottom: 0;
   align-self: flex-end;
   height: 5vh;
   width: 100%;
   background-color: $color-dark;
 
   &Text {
+    margin: 0;
     padding: 16px 32px;
     font-size: 20px;
     color: $color-background;
