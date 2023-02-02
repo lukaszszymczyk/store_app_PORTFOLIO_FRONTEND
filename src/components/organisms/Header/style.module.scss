@@ -1,17 +1,17 @@
 @import "src/styles/variables";
 
 .header {
-  height: 5vh;
+  height: $default-element-height;
   width: 100%;
-  background: $color-dark;
-  color: $color-background;
+  background: $color-primary;
+  color: $color-text-primary;
 
   &Links {
-    padding: 16px 32px;
+    padding: $spacing-lg $spacing-xl;
 
     &Element {
-      margin: 0 32px;
-      color: $color-background;
+      margin: 0 $spacing-xl;
+      color: $color-text-primary;
       text-decoration: none;
     }
   }

@@ -1,23 +1,23 @@
 @import "src/styles/variables";
 
 .buttonElement {
+  display: inline-block;
+  height: $spacing-xl;
+  width: calc(#{$spacing-xl} * 5);
   border: none;
+  border-radius: $spacing-xs;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  height: 32px;
-  width: 160px;
-  border-radius: 4px;
+  font-size: $spacing-lg;
   cursor: pointer;
 
   &Primary {
-    background-color: $color-dark;
-    color: $color-background;
+    background-color: $color-background-primary;
+    color: $color-text-primary;
   }
 
   &Secondary {
-    background-color: $color-background-element;
-    color: $color-text-primary;
+    background-color: $color-background-secondary;
+    color: $color-text-secondary;
   }
 }

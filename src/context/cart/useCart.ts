@@ -6,15 +6,12 @@ import { CartContextType, CartItem } from "context/cart/cartContext";
 export const useCart = (): CartContextType => {
   const [cart, setCart] = useState<CartItem[]>([]); // useReducer
 
-  console.log(cart);
-
   const addItemToCart = (item: CartItem) => {
     setCart((prev) => {
       const foundItem = prev.find((cartItem) => cartItem.id === item.id);
 
       if (!foundItem) {
-        const returnObject = [...prev, item];
-        return returnObject;
+        return [...prev, item];
       }
       return prev.map((cartItem) => {
         if (cartItem.id === item.id) {

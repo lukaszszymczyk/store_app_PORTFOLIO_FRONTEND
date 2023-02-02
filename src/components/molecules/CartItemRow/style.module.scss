@@ -1,7 +1,9 @@
+@import "src/styles/variables";
+
 .cartItemRow {
   display: grid;
   grid-template-columns: 8fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: $spacing-lg;
 
   &Quantity {
     align-self: center;
