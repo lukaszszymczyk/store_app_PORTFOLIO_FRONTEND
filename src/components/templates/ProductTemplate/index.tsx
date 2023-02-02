@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "services/api/interfaces/Product";
 import { ProductDetails } from "components/organisms/ProductDetails";
+import styles from "./style.module.scss";
 
 export interface ProductTemplateProps {
   product: Product;
@@ -9,5 +10,9 @@ export interface ProductTemplateProps {
 export function ProductTemplate({
   product,
 }: ProductTemplateProps): JSX.Element {
-  return <ProductDetails product={product} />;
+  return (
+    <div className={styles.productTemplate}>
+      <ProductDetails product={product} />
+    </div>
+  );
 }
