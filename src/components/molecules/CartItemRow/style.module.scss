@@ -1,4 +1,13 @@
-.cartItem {
-  display: flex;
-  flex-direction: row;
+.cartItemRow {
+  display: grid;
+  grid-template-columns: 8fr 1fr 1fr;
+  grid-gap: 16px;
+
+  &Quantity {
+    align-self: center;
+  }
+
+  &Actions {
+    align-self: center;
+  }
 }
