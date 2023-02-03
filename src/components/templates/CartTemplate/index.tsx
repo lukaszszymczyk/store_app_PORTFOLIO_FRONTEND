@@ -3,11 +3,9 @@ import React from "react";
 import { CartItemList } from "components/organisms/CartItemList";
 import { Button } from "components/atoms/Button";
 import { useNavigate } from "react-router";
-import {
-  HOME_PAGE_PATH,
-} from "config/constants";
-import styles from "./style.module.scss";
+import { HOME_PAGE_PATH } from "config/constants";
 import { payForAllItemsInCart } from "services/payment/stripePayment";
+import styles from "./style.module.scss";
 
 export interface CartTemplateProps {
   cart: CartItem[];
