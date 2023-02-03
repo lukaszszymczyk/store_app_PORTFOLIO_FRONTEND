@@ -2,18 +2,22 @@ import React, { useContext } from "react";
 import { CartContext, CartItem } from "context/cart/cartContext";
 import { ProductCard } from "components/atoms/ProductCard";
 import { Button } from "components/atoms/Button";
+import { NumberInput } from "components/atoms/NumberInput";
 import styles from "./style.module.scss";
 
 export interface CartItemRowProps {
   cartItem: CartItem;
 }
 
-// TODO: quantity and remove item from cart
 export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
   const { quantity, ...productProperties } = cartItem;
   const product = { ...productProperties };
 
-  const { removeItemFromCart } = useContext(CartContext);
+  const { removeItemFromCart, changeItemQuantity } = useContext(CartContext);
+
+  const handleChangeQuantity = (value: number) => {
+    changeItemQuantity(product.id, value);
+  };
 
   const handleAddToCart = () => {
     removeItemFromCart(product.id);
@@ -22,7 +26,7 @@ export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
   return (
     <div id="cart-item-row" className={styles.cartItemRow}>
       <ProductCard product={product} />
-      <input value={quantity} className={styles.cartItemRowQuantity} />
+      <NumberInput value={quantity} onChange={handleChangeQuantity} />
       <div className={styles.cartItemRowActions}>
         <Button text="Remove from cart" onClick={handleAddToCart} />
       </div>
