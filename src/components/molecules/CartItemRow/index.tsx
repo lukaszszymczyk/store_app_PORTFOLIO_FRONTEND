@@ -19,7 +19,7 @@ export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
     changeItemQuantity(product.id, value);
   };
 
-  const handleAddToCart = () => {
+  const handleRemoveFromCart = () => {
     removeItemFromCart(product.id);
   };
 
@@ -28,7 +28,7 @@ export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
       <ProductCard product={product} />
       <NumberInput value={quantity} onChange={handleChangeQuantity} />
       <div className={styles.cartItemRowActions}>
-        <Button text="Remove from cart" onClick={handleAddToCart} />
+        <Button text="Remove from cart" onClick={handleRemoveFromCart} />
       </div>
     </div>
   );
