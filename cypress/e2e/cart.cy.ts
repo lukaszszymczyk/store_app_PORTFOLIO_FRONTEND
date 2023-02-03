@@ -1,18 +1,53 @@
 /// <reference types="Cypress"/>
 
+const APP_URL = 'http://localhost:3000';
+const TIMEOUT = 10000;
+
 describe("Cart", () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit(APP_URL);
   })
 
   it("add item to cart", () => {
-    cy.contains('Add to cart',{timeout: 10000}).should('be.visible').click();
+    //Arrange
+    cy.contains('Add to cart',{timeout: TIMEOUT}).should('be.visible');
+
+    //Act
+    cy.contains('Add to cart').click();
+
+    //Assert
     cy.contains('Cart').click();
     cy.get('#cart-item-row').first().should('be.visible');
   })
 
-})
+  it("remove item from cart", () => {
+    //Arrange
+    cy.contains('Add to cart',{timeout: TIMEOUT}).should('be.visible');
+    cy.contains('Add to cart').click();
+    cy.contains('Cart').click();
 
-//remove item
-//change quantity
-// test 2 itemy. jeden zwiekszam quantity, drugi usuwanie
+    //Act
+    cy.contains('Remove from cart').click();
+
+    //Assert
+    cy.contains('Home').click();
+    cy.contains('Cart').click();
+    cy.get('#cart-item-row').should('not.exist');
+  })
+
+  it("change quantity of item", () => {
+    //Arrange
+    cy.contains('Add to cart',{timeout: TIMEOUT}).should('be.visible');
+    cy.contains('Add to cart').click();
+    cy.contains('Cart').click();
+
+    //Act
+    cy.get('#cart-item-row').get('input').type('{uparrow}').trigger('change');
+
+    //Assert
+    cy.contains('Home').click();
+    cy.contains('Cart').click();
+    cy.get('#cart-item-row').get('input').should('have.value', 2);
+  })
+
+})
