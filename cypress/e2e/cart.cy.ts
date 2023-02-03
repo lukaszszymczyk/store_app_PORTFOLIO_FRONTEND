@@ -1,6 +1,7 @@
 /// <reference types="Cypress"/>
 
-const APP_URL = 'http://localhost:3000';
+import { APP_URL } from "../../src/config/constants";
+
 const TIMEOUT = 10000;
 
 describe("Cart", () => {

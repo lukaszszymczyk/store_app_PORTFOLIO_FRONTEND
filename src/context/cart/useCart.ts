@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { CartContextType, CartItem } from "context/cart/cartContext";
 
-// TODO: function with change quantity of item
-
 export const useCart = (): CartContextType => {
   const [cart, setCart] = useState<CartItem[]>([]); // useReducer
 

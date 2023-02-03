@@ -7,6 +7,8 @@ import { Product } from "components/pages/Product";
 import { CartContext } from "context/cart/cartContext";
 import { useCart } from "context/cart/useCart";
 import { Cart } from "components/pages/Cart";
+import { Checkout } from "components/pages/Checkout";
+import { PaymentResult } from "components/pages/PaymentResult";
 
 export function App(): JSX.Element {
   const cartContext = useCart();
@@ -19,6 +21,15 @@ export function App(): JSX.Element {
           <Route path="/" element={<Home />} />
           <Route path="products/:id" element={<Product />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route
+            path="checkout/success"
+            element={<PaymentResult type="success" />}
+          />
+          <Route
+            path="checkout/failure"
+            element={<PaymentResult type="failure" />}
+          />
         </Routes>
         <Footer />
       </Router>

@@ -3,8 +3,11 @@ import React from "react";
 import { CartItemList } from "components/organisms/CartItemList";
 import { Button } from "components/atoms/Button";
 import { useNavigate } from "react-router";
-import { HOME_PAGE_PATH, PAYMENT_PAGE_PATH } from "config/constants";
+import {
+  HOME_PAGE_PATH,
+} from "config/constants";
 import styles from "./style.module.scss";
+import { payForAllItemsInCart } from "services/payment/stripePayment";
 
 export interface CartTemplateProps {
   cart: CartItem[];
@@ -15,6 +18,10 @@ export function CartTemplate({ cart }: CartTemplateProps): JSX.Element {
 
   const handleNavigateToPath = (path: string) => {
     navigate(path);
+  };
+
+  const handlePayment = async () => {
+    await payForAllItemsInCart(cart);
   };
 
   // 1 - 2 - 3 - 4
@@ -28,10 +35,7 @@ export function CartTemplate({ cart }: CartTemplateProps): JSX.Element {
         onClick={() => handleNavigateToPath(HOME_PAGE_PATH)}
         variant="secondary"
       />
-      <Button
-        text="Pay with card"
-        onClick={() => handleNavigateToPath(PAYMENT_PAGE_PATH)}
-      />
+      <Button text="Buy" onClick={handlePayment} />
     </div>
   );
 }
