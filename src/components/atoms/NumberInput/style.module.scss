@@ -1,0 +1,7 @@
+@import "src/styles/variables";
+
+.numberInput {
+  max-height: $spacing-xl;
+  max-width: calc(2 * #{$spacing-xl});
+  align-self: center;
+}

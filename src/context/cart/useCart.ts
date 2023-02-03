@@ -38,9 +38,35 @@ export const useCart = (): CartContextType => {
     });
   };
 
+  const changeItemQuantity = (id: number, quantity: number) => {
+    if (quantity < 1) {
+      console.error("Quantity cannot be less than 1");
+      return;
+    }
+    setCart((prev) => {
+      const itemIndex = prev.findIndex((cartItem) => cartItem.id === id);
+
+      if (itemIndex < 0) {
+        console.error("Item does not exist");
+        return prev;
+      }
+
+      return prev.map((cartItem) => {
+        if (cartItem.id === id) {
+          return {
+            ...cartItem,
+            quantity,
+          };
+        }
+        return cartItem;
+      });
+    });
+  };
+
   return {
     cart,
     addItemToCart,
     removeItemFromCart,
+    changeItemQuantity,
   };
 };

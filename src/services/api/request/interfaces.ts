@@ -9,7 +9,6 @@ export enum HttpMethodType {
   DELETE,
 }
 
-// TODO: add body for POST
 export interface RequestParams {
   path: string;
   methodType: HttpMethodType;
