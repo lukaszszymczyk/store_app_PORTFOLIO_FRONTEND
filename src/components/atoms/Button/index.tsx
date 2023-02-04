@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 
 export interface ButtonProps {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   type?: ButtonType;
   variant?: ButtonVariant;
 }

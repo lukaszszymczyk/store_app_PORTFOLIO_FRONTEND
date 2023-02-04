@@ -3,8 +3,7 @@ import React from "react";
 import { CartItemList } from "components/organisms/CartItemList";
 import { Button } from "components/atoms/Button";
 import { useNavigate } from "react-router";
-import { HOME_PAGE_PATH } from "config/constants";
-import { payForAllItemsInCart } from "services/payment/stripePayment";
+import { CHECKOUT_PAGE_PATH, HOME_PAGE_PATH } from "config/constants";
 import styles from "./style.module.scss";
 
 export interface CartTemplateProps {
@@ -18,12 +17,6 @@ export function CartTemplate({ cart }: CartTemplateProps): JSX.Element {
     navigate(path);
   };
 
-  const handlePayment = async () => {
-    await payForAllItemsInCart(cart);
-  };
-
-  // 1 - 2 - 3 - 4
-
   return (
     <div className={styles.cartTemplate}>
       <h1>Shopping Cart</h1>
@@ -33,7 +26,10 @@ export function CartTemplate({ cart }: CartTemplateProps): JSX.Element {
         onClick={() => handleNavigateToPath(HOME_PAGE_PATH)}
         variant="secondary"
       />
-      <Button text="Buy" onClick={handlePayment} />
+      <Button
+        text="Proceed to checkout"
+        onClick={() => handleNavigateToPath(CHECKOUT_PAGE_PATH)}
+      />
     </div>
   );
 }
