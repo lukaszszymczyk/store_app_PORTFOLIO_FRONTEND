@@ -1,0 +1,7 @@
+@import "src/styles/variables";
+
+.formFooter {
+  margin: $spacing-xl 0;
+  display: flex;
+  gap: $spacing-lg;
+}
