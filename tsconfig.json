@@ -22,7 +22,8 @@
     "baseUrl": "src"
   },
   "include": [
-    "src"
+    "src",
+    "../../../Mentoring_academy/JS-TS-Fundamentals-main/3. TS FP+OOP/zadania/2.OOP.ts"
   ],
   "exclude": ["node_modules"]
 }

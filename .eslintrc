@@ -34,6 +34,8 @@
     "@typescript-eslint/no-unused-vars": 0,
     "react/button-has-type": 0,
     "react/require-default-props": 0,
-    "default-case": "off"
+    "default-case": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-useless-fragment": "off"
   }
 }

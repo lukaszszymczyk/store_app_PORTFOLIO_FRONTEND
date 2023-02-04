@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+
+.formElement {
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  &Error {
+    margin: 0;
+    color: $color-text-error;
+    font-size: 12px;
+  }
+}
