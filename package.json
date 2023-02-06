@@ -31,7 +31,7 @@
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "prettier": "npx prettier src --check",
-    "prettier:fix": "yarn run prettier -- --write",
+    "prettier:fix": "npm run prettier -- --write",
     "code-formatter:fix": "npm run lint:fix & npm run prettier:fix"
   },
   "eslintConfig": {
