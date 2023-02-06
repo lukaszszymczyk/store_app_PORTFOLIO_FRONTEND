@@ -22,14 +22,7 @@ export function App(): JSX.Element {
           <Route path="products/:id" element={<Product />} />
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
-          <Route
-            path="checkout/success"
-            element={<PaymentResult type="success" />}
-          />
-          <Route
-            path="checkout/failure"
-            element={<PaymentResult type="failure" />}
-          />
+          <Route path="checkout/info" element={<PaymentResult />} />
         </Routes>
         <Footer />
       </Router>

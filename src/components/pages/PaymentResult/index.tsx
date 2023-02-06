@@ -1,9 +1,11 @@
 import React from "react";
+import { useSearchParams } from "react-router-dom";
+import { Message } from "components/molecules/Message";
 
-export type PaymentResultType = "success" | "failure";
+export function PaymentResult(): JSX.Element {
+  const [searchParams] = useSearchParams();
+  const isSuccess = searchParams.get("success") === "true";
 
-export function PaymentResult(props: { type: PaymentResultType }): JSX.Element {
-  const { type } = props;
-  if (type === "success") return <div>success</div>;
-  return <div>failure</div>;
+  if (!isSuccess) return <Message type="error" text="Failed payment" />;
+  return <Message type="success" text="Payment successful" />;
 }

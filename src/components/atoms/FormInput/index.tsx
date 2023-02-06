@@ -37,7 +37,13 @@ export function FormInput({ id, name, type, isRequired }: FormInputProps) {
         type={type || "text"}
         {...register(id, { required: requiredOptions(name, isRequired) })}
       />
-      {errors[id] ? <p className={styles.formElementError}>{(errors[id] as ErrorMessage).message}</p> : ""}
+      {errors[id] ? (
+        <p className={styles.formElementError}>
+          {(errors[id] as ErrorMessage).message}
+        </p>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
