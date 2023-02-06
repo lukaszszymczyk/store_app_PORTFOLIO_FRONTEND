@@ -1,18 +1,24 @@
 @import "src/styles/variables";
 
 .header {
-  height: $default-element-height;
+  display: flex;
+  align-items: center;
+  max-height: $default-element-height;
   width: 100%;
   background: $color-primary;
   color: $color-text-primary;
 
   &Links {
     padding: $spacing-lg $spacing-xl;
+    display: flex;
+    gap: $spacing-xl;
 
     &Element {
-      margin: 0 $spacing-xl;
       color: $color-text-primary;
       text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-md;
     }
   }
 }

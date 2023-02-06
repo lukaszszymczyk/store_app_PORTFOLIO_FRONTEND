@@ -29,12 +29,12 @@ npm run start
 
 ## Available scripts
 
-| Command                   | Description                   |     |
-| ------------------------- | ----------------------------- | --- |
-| `npm run start`           | Open local server             |     |
-| `npm run build`           | Create optimized build        |     |
-| `npm run test`            | Run tests                     |     |
-| `npm run eject`           | Eject CRA                     |     |
+| Command                   | Description                   |
+| ------------------------- | ----------------------------- |
+| `npm run start`           | Open local server             |
+| `npm run build`           | Create optimized build        |
+| `npm run test`            | Run tests                     |
+| `npm run eject`           | Eject CRA                     |
 
 ## Project content
 
@@ -43,7 +43,6 @@ npm run start
 - shopping cart (add / remove item, change quantity)
 - purchase form
 - integration with card payment
-- search for products by phrase
 - generic implementation of api call
 
 ## Live
