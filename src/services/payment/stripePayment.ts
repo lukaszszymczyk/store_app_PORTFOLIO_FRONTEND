@@ -1,6 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
 import {
-  APP_URL,
   CHECKOUT_FAILURE_PAGE_PATH,
   CHECKOUT_SUCCESS_PAGE_PATH,
 } from "config/constants";
@@ -38,8 +37,8 @@ export const payForAllItemsInCart = async (cartItems: CartItem[]) => {
     await stripe.redirectToCheckout({
       lineItems,
       mode: "payment",
-      successUrl: `${APP_URL}${CHECKOUT_SUCCESS_PAGE_PATH}`,
-      cancelUrl: `${APP_URL}${CHECKOUT_FAILURE_PAGE_PATH}`,
+      successUrl: `${CHECKOUT_SUCCESS_PAGE_PATH}`,
+      cancelUrl: `${CHECKOUT_FAILURE_PAGE_PATH}`,
     });
   } catch (err) {
     console.error(err);
