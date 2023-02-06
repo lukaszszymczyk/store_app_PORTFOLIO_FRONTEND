@@ -1,46 +1,67 @@
-# Getting Started with Create React Index
+# Store App
 
-This project was bootstrapped with [Create React Index](https://github.com/facebook/create-react-app).
+This project includes implementation of store application. As a user you can view list of products, details of them and also use the shopping cart functionality.
+The project has integration with Stripe payment so use has a possibility to pay for shopping by credit card.
 
-## Available Scripts
+## Used technologies
 
-In the project directory, you can run:
+| Tech                                                    | Description                              |
+| ------------------------------------------------------- | ---------------------------------------- |
+| [React](https://reactjs.org/)                           | Library for building user interfaces     |
+| [Typescript](https://www.typescriptlang.org/)           | Javascript superset language             |
+| [React Router](https://reacttraining.com/react-router/) | Declarative routing for React            |
+| [Sass](https://https://sass-lang.com//)                 | Preprocessor CSS                         |
+| [Fake Store API](https://https://fakestoreapi.com/)     | Fake store rest API                      |
+| [React Hook Form](https://react-hook-form.com/)         | Forms with easy-to-use validation.       |
+| [Context API](https://reactjs.org/docs/context.html/)   | Share data with multiple components      |
+| [Cypress](https://https://www.cypress.io/)              | Frontend testing tool                    |
+| [Stripe](https://stripe.com//)                          | Payment infrastructure                   |
+| [Eslint](https://eslint.org/)                           | Javascript Linter                        |
+| [Prettier](https://prettier.io/)                        | Code formatter                           |
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+git clone https://github.com/lukaszszymczyk/store_app.git
+npm install
+npm run start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Available scripts
 
-### `yarn test`
+| Command                   | Description                   |     |
+| ------------------------- | ----------------------------- | --- |
+| `npm run start`           | Open local server             |     |
+| `npm run build`           | Create optimized build        |     |
+| `npm run test`            | Run tests                     |     |
+| `npm run eject`           | Eject CRA                     |     |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project content
 
-### `yarn build`
+- presenting a list of products
+- presenting details of product
+- shopping cart (add / remove item, change quantity)
+- purchase form
+- integration with card payment
+- search for products by phrase
+- generic implementation of api call
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Live
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://store-app-lukaszszymczyk.vercel.app/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots of code
+Example of React component (element of cart):
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/15704051/216964034-8c7bc4ef-25d3-46f4-87db-1a02775125b2.png" alt="Screen Shot">
+</p>
 
-### `yarn eject`
+Custom hook provides cart functionality (includes useReducer hook):
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/15704051/216964540-4d08d104-e8c9-45db-b913-3d13add7888f.png" alt="Screen Shot">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React Index documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+UseRequestCreator - implementation of generic use http request:
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/15704051/216964563-f19863aa-2239-43b0-b95a-766fe29da8bf.png" alt="Screen Shot">
+</p>

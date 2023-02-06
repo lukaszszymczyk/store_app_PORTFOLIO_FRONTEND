@@ -7,14 +7,14 @@ interface AddItemActionType {
 }
 
 interface RemoveItemActionType {
-  type: "removeItem"
+  type: "removeItem";
   payload: {
     id: number;
   };
 }
 
 interface ChangeItemQuantityActionType {
-  type: "changeItemQuantity"
+  type: "changeItemQuantity";
   payload: {
     id: number;
     quantity: number;
@@ -23,7 +23,6 @@ interface ChangeItemQuantityActionType {
 
 const addItemAction = (prevState: CartItem[], payload: CartItem) => {
   const foundItem = prevState.find((cartItem) => cartItem.id === payload.id);
-
   if (!foundItem) {
     return [...prevState, payload];
   }
@@ -60,7 +59,7 @@ const changeItemQuantityAction = (
 
   if (quantity < 1) {
     console.error("Quantity cannot be less than 1");
-    return;
+    return prevState;
   }
 
   const itemIndex = prevState.findIndex((cartItem) => cartItem.id === id);
@@ -74,7 +73,7 @@ const changeItemQuantityAction = (
     if (cartItem.id === id) {
       return {
         ...cartItem,
-        quantity: quantity,
+        quantity,
       };
     }
     return cartItem;
@@ -82,12 +81,12 @@ const changeItemQuantityAction = (
 };
 
 const cartReducer = (
-  prevState: CartItem[] = [],
+  prevState: CartItem[],
   action:
     | AddItemActionType
     | RemoveItemActionType
     | ChangeItemQuantityActionType
-) => {
+): CartItem[] => {
   switch (action.type) {
     case "addItem":
       return addItemAction(prevState, action.payload);
@@ -96,6 +95,7 @@ const cartReducer = (
     case "changeItemQuantity":
       return changeItemQuantityAction(prevState, action.payload);
   }
+  return prevState;
 };
 
 export const useCart = (): CartContextType => {
