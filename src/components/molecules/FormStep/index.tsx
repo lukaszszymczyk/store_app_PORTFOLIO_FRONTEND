@@ -1,7 +1,7 @@
 import React from "react";
 import { FormInput } from "components/atoms/FormInput";
 import styles from "./style.module.scss";
-
+import { Message } from "components/molecules/Message";
 
 export function FormStep(props: { step: number }): JSX.Element {
   const { step } = props;
@@ -24,5 +24,5 @@ export function FormStep(props: { step: number }): JSX.Element {
         </div>
       );
   }
-  return <></>;
+  return <Message type="error" text="Form failed"/>;
 }

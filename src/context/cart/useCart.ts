@@ -1,21 +1,20 @@
 import { useReducer } from "react";
 import { CartContextType, CartItem } from "context/cart/cartContext";
 
-interface CartActionType {
-  type: string;
-}
-
-interface AddItemActionType extends CartActionType {
+interface AddItemActionType {
+  type: "addItem";
   payload: CartItem;
 }
 
-interface RemoveItemActionType extends CartActionType {
+interface RemoveItemActionType {
+  type: "removeItem"
   payload: {
     id: number;
   };
 }
 
-interface ChangeItemQuantityActionType extends CartActionType {
+interface ChangeItemQuantityActionType {
+  type: "changeItemQuantity"
   payload: {
     id: number;
     quantity: number;
@@ -91,14 +90,11 @@ const cartReducer = (
 ) => {
   switch (action.type) {
     case "addItem":
-      return addItemAction(prevState, action.payload as CartItem);
+      return addItemAction(prevState, action.payload);
     case "removeItem":
-      return removeItemAction(prevState, action.payload as { id: number });
+      return removeItemAction(prevState, action.payload);
     case "changeItemQuantity":
-      return changeItemQuantityAction(
-        prevState,
-        action.payload as { id: number; quantity: number }
-      );
+      return changeItemQuantityAction(prevState, action.payload);
   }
 };
 
