@@ -13,13 +13,21 @@ export function FormFooter({
   previousStep,
   nextStep,
 }: FormFooterProps) {
-  const isConfirmButtonEnabled = formStep === MAX_STEP_INDEX;
+  const isPreviousButtonEnabled = formStep !== 0;
+  const isNextButtonEnabled = formStep !== MAX_STEP_INDEX;
 
   return (
     <div className={styles.formFooter}>
-      <Button text="Previous" variant="secondary" onClick={previousStep} />
-      <Button text="Next" variant="secondary" onClick={nextStep} />
-      {isConfirmButtonEnabled ? <Button text="Buy" type="submit" /> : ""}
+      {isPreviousButtonEnabled ? (
+        <Button text="Previous" variant="secondary" onClick={previousStep} />
+      ) : (
+        ""
+      )}
+      {isNextButtonEnabled ? (
+        <Button text="Next" variant="secondary" onClick={nextStep} />
+      ) : (
+        <Button text="Buy" type="submit" />
+      )}
     </div>
   );
 }

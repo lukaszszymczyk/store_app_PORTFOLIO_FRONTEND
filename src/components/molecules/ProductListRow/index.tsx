@@ -11,7 +11,6 @@ export interface ProductRowProps {
   product: Product;
 }
 
-// TODO: poprawic obsluge quantity, defaultValue itp.
 export function ProductListRow({ product }: ProductRowProps): JSX.Element {
   const { id } = product;
   const { addItemToCart } = useContext(CartContext);

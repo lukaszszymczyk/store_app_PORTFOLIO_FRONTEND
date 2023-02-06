@@ -1,10 +1,10 @@
 @import "src/styles/variables";
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  height: $default-element-height;
+  max-height: $default-element-height;
   width: 100%;
+  display: flex;
+  align-items: center;
   background-color: $color-primary;
 
   &Text {
