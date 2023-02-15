@@ -3,7 +3,7 @@ import { Button } from "components/atoms/Button";
 import {
   MAX_STEP_INDEX,
   UseFormStepsOutput,
-} from "components/pages/Checkout/useCheckoutFormSteps";
+} from "pages/Checkout/useCheckoutFormSteps";
 import styles from "./style.module.scss";
 
 export interface FormFooterProps extends UseFormStepsOutput {}

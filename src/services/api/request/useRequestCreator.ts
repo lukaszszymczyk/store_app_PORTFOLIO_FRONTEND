@@ -21,6 +21,7 @@ export const useRequestCreator = <ResponseDataType>(
       return;
     }
     setResult(response.data);
+    setIsLoading(false);
   };
 
   return [{ result, isLoading, errorMessage }, { request }];

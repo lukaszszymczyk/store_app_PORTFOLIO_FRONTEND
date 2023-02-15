@@ -4,13 +4,13 @@ import { HttpMethodType } from "services/api/request/interfaces";
 import { ALL_PRODUCTS_API_PATH } from "services/api/apiPaths";
 import { useEffect } from "react";
 
-export interface UseProductsOutput {
+export interface UseFetchProductsOutput {
   products: Product[] | null;
   isLoading: boolean;
   errorMessage: string;
 }
 
-export const useProducts = (): UseProductsOutput => {
+export const useFetchProducts = (): UseFetchProductsOutput => {
   const [
     { result: products, isLoading, errorMessage },
     { request: getAllProducts },
@@ -25,7 +25,7 @@ export const useProducts = (): UseProductsOutput => {
 
   return {
     products,
-    isLoading,
     errorMessage,
+    isLoading,
   };
 };
