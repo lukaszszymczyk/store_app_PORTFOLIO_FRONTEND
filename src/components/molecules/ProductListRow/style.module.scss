@@ -3,8 +3,10 @@
 .productListRow {
   display: grid;
   grid-template-columns: 9fr 1fr;
-  padding: $spacing-sm;
+  padding: $spacing-sm $spacing-xl;
   grid-gap: $spacing-lg;
+  background: $color-background;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   &Link {
     text-decoration: none;

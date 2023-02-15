@@ -3,4 +3,8 @@
 .homeTemplate {
   padding: $spacing-xl;
   min-height: 82vh;
+  background: $color-background-secondary;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
 }

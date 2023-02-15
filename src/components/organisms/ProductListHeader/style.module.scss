@@ -1,0 +1,12 @@
+@import "src/styles/variables";
+
+.productListHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputElement {
+  background-color: gainsboro;
+  border: 1px gray;
+  border-radius: 5px;
+}
