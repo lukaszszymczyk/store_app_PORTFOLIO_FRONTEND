@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  margin: 0 $spacing-xl;
+  gap: $spacing-md;
+  border-radius: $spacing-xss;
+}

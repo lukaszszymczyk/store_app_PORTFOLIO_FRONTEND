@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useCheckoutFormSteps } from "components/pages/Checkout/useCheckoutFormSteps";
+import { useCheckoutFormSteps } from "pages/Checkout/useCheckoutFormSteps";
 import { CheckoutTemplate } from "components/templates/CheckoutTemplate";
 import { CartContext } from "context/cart/cartContext";
 

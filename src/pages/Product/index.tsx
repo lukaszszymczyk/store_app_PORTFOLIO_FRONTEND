@@ -1,5 +1,5 @@
 import React from "react";
-import { useProduct } from "components/pages/Product/useProduct";
+import { useProduct } from "pages/Product/useProduct";
 import { useParams } from "react-router";
 import { ProductTemplate } from "components/templates/ProductTemplate";
 import { Message } from "components/molecules/Message";
