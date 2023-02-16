@@ -5,6 +5,7 @@ import { CartContext } from "context/cart/cartContext";
 import { ProductCard } from "components/atoms/ProductCard";
 import { Button } from "components/atoms/Button";
 import { Link } from "react-router-dom";
+import { MdAddShoppingCart } from "react-icons/md";
 import styles from "./style.module.scss";
 
 export interface ProductRowProps {
@@ -28,7 +29,12 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
         <ProductCard product={product} />
       </Link>
       <div className={styles.productListRowOption}>
-        <Button text="Add to cart" onClick={handleAddToCart} />
+        <Button
+          text="Add to cart"
+          icon={<MdAddShoppingCart />}
+          isOnlyIconOnMobile
+          onClick={handleAddToCart}
+        />
       </div>
     </div>
   );

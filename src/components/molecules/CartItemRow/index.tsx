@@ -26,7 +26,7 @@ export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
   return (
     <div id="cart-item-row" className={styles.cartItemRow}>
       <ProductCard product={product} />
-      <NumberInput value={quantity} onChange={handleChangeQuantity} />
+      <NumberInput initValue={quantity} onChange={handleChangeQuantity} />
       <div className={styles.cartItemRowActions}>
         <Button text="Remove from cart" onClick={handleRemoveFromCart} />
       </div>

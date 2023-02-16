@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { payForAllItemsInCart } from "services/payment/stripePayment";
 import { CartItem } from "context/cart/cartContext";
@@ -13,11 +13,11 @@ export interface PurchaseFormProps {
 
 export function PurchaseForm({ cart, formStepsOutput }: PurchaseFormProps) {
   const formMethods = useForm();
-  const { formStep, previousStep, nextStep } = formStepsOutput;
+  const { formStep, changeToPreviousStep, changeToNextStep } = formStepsOutput;
 
-  const onPreviousStep = () => previousStep();
+  const handlePreviousStep = () => changeToPreviousStep();
 
-  const onNextStep = async () => {
+  const validateFormStep = async (): Promise<boolean> => {
     let isValid = false;
     switch (formStep) {
       case 0:
@@ -27,24 +27,28 @@ export function PurchaseForm({ cart, formStepsOutput }: PurchaseFormProps) {
         isValid = await formMethods.trigger(["street", "city"]);
         break;
     }
-    if (isValid) nextStep();
+    return isValid;
   };
 
-  const handlePayment = async () => {
-    await payForAllItemsInCart(cart);
+  const handleNextStep = async () => {
+    const isValid = await validateFormStep();
+    if (isValid) changeToNextStep();
+  };
+
+  const handleSubmit = async () => {
+    const isValid = await validateFormStep();
+    if (isValid) payForAllItemsInCart(cart);
   };
 
   return (
     <FormProvider {...formMethods}>
-      <form
-        id="purchase-form"
-        onSubmit={formMethods.handleSubmit(handlePayment)}
-      >
+      <form>
         <FormStep step={formStep} />
         <FormFooter
           formStep={formStep}
-          previousStep={onPreviousStep}
-          nextStep={onNextStep}
+          changeToPreviousStep={handlePreviousStep}
+          changeToNextStep={handleNextStep}
+          onSubmitForm={handleSubmit}
         />
       </form>
     </FormProvider>
