@@ -1,0 +1,7 @@
+@import "src/styles/variables";
+
+.searchWithFilters {
+  display: flex;
+  gap: $spacing-md;
+  align-items: center;
+}

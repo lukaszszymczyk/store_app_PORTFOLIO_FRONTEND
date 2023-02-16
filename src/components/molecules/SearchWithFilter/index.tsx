@@ -1,6 +1,9 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import styles from "components/molecules/Message/style.module.scss";
+import React, { useEffect, useState } from "react";
 import { Button } from "components/atoms/Button";
+import { SearchInput } from "components/atoms/SearchInput";
+import { BsSearch } from "react-icons/bs";
+import { VscListFilter } from "react-icons/vsc";
+import styles from "./style.module.scss";
 
 export interface SearchWithFilterProps {
   filterProducts: (phrase: string) => void;
@@ -22,8 +25,7 @@ export function SearchWithFilter({
     }
   }, [searchedPhrase]);
 
-  const handleChangeText = (event: ChangeEvent<HTMLInputElement>) => {
-    const text = event.target.value;
+  const handleChangeText = (text: string) => {
     setSearchedPhrase(text);
   };
 
@@ -37,14 +39,19 @@ export function SearchWithFilter({
   };
 
   return (
-    <div>
-      <input
-        className={styles.inputElement}
+    <div className={styles.searchWithFilters}>
+      <SearchInput
+        placeholder="Search"
+        value={searchedPhrase}
         onChange={handleChangeText}
-        name="inputPhrase"
       />
-      <Button text="Search" onClick={handleSearch} />
-      <Button text="Clear Filter" onClick={handleClearFilter} />
+      <Button icon={<BsSearch />} text="Search" onClick={handleSearch} />
+      <Button
+        icon={<VscListFilter />}
+        variant="secondary"
+        text="Clear filters"
+        onClick={handleClearFilter}
+      />
     </div>
   );
 }

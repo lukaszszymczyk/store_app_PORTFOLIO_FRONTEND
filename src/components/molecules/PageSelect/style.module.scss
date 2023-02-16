@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+
+.pageSelect {
+  display: flex;
+  gap: $spacing-sm;
+  max-height: $spacing-xl;
+
+  &Number {
+    display: flex;
+    width: $spacing-lg;
+    align-items: center;
+    justify-content: center;
+  }
+}

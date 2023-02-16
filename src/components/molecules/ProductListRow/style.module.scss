@@ -2,10 +2,10 @@
 
 .productListRow {
   display: grid;
-  grid-template-columns: 9fr 1fr;
+  grid-template-columns: 7fr 1fr;
   padding: $spacing-sm $spacing-xl;
   grid-gap: $spacing-lg;
-  background: $color-background;
+  background: $color-background-white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   &Link {
