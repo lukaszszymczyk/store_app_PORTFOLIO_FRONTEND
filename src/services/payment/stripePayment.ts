@@ -1,7 +1,7 @@
 import { loadStripe } from "@stripe/stripe-js";
 import {
-  CHECKOUT_FAILURE_PAGE_PATH,
   CHECKOUT_SUCCESS_PAGE_PATH,
+  CHECKOUT_FAILURE_PAGE_PATH,
 } from "config/constants";
 import { CartItem } from "context/cart/cartContext";
 

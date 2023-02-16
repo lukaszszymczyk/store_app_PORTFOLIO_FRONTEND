@@ -1,50 +1,43 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import styles from "components/molecules/Message/style.module.scss";
+import React, { useEffect, useState } from "react";
 import { Button } from "components/atoms/Button";
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
+import styles from "./style.module.scss";
 
 export interface PageSelectProps {
-  initPageIndex: number;
-  maxPages: number;
+  currentPageIndex: number;
+  minPageIndex: number;
+  maxPageIndex: number;
   changeProductsPage: (pageIndex: number) => void;
 }
 
 export function PageSelect({
-  initPageIndex,
-  maxPages,
+  currentPageIndex,
+  minPageIndex,
+  maxPageIndex,
   changeProductsPage,
 }: PageSelectProps): JSX.Element {
-  const [pageIndex, setPageIndex] = useState<number>(initPageIndex);
-
-  useEffect(() => {
-    changeProductsPage(pageIndex);
-  }, [pageIndex]);
-
-  const handleChangeInputPage = (event: ChangeEvent<HTMLInputElement>) => {
-    const inputValue = event.target.value;
-    if (!inputValue) return;
-    setPageIndex(Number(inputValue) - 1);
-  };
-
   const handlePrevPage = () => {
-    if (pageIndex === initPageIndex) return;
-    setPageIndex((prev) => prev - 1);
+    changeProductsPage(currentPageIndex - 1);
   };
   const handleNextPage = () => {
-    if (pageIndex === maxPages - 1) return;
-    setPageIndex((prev) => prev + 1);
+    changeProductsPage(currentPageIndex + 1);
   };
 
   return (
-    <div>
-      <Button variant="secondary" text="Prev" onClick={handlePrevPage} />
-      <input
-        className={styles.inputElement}
-        onChange={handleChangeInputPage}
-        name="inputPage"
-        min={initPageIndex + 1}
-        max={maxPages}
+    <div className={styles.pageSelect}>
+      <Button
+        icon={<GrLinkPrevious />}
+        variant="secondary"
+        onClick={handlePrevPage}
+        visibility={currentPageIndex !== minPageIndex}
       />
-      <Button variant="secondary" text="Next" onClick={handleNextPage} />
+      <p className={styles.pageSelectNumber}>{currentPageIndex + 1}</p>
+      <Button
+        icon={<GrLinkNext />}
+        variant="secondary"
+        onClick={handleNextPage}
+        visibility={currentPageIndex !== maxPageIndex}
+      />
     </div>
   );
 }

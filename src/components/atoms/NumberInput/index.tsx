@@ -1,25 +1,44 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export interface NumberInputProps {
-  value: number;
-  onChange: (value: number) => void;
+  initValue: number;
+  min?: number;
+  max?: number;
+  onChange?: (value: number) => void;
+  onBlur?: (value: number) => void;
 }
 
-export function NumberInput(props: NumberInputProps): JSX.Element {
-  const { value, onChange } = props;
+export type InputType = "number" | "text";
 
-  const onChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
-    onChange(Number(event.target.value));
+export function NumberInput({
+  min,
+  max,
+  initValue,
+  onChange,
+  onBlur,
+}: NumberInputProps): JSX.Element {
+  const handleChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputValueNumber = Number(event.target.value);
+    if (onChange) {
+      onChange(inputValueNumber);
+    }
+  };
+
+  const handleBlur = (event: ChangeEvent<HTMLInputElement>) => {
+    if (onBlur) {
+      const inputValueNumber = Number(event.target.value);
+      onBlur(inputValueNumber);
+    }
   };
 
   return (
     <input
       className={styles.numberInput}
+      value={initValue}
       type="number"
-      min="1"
-      value={value}
-      onChange={onChangeValue}
+      onChange={handleChangeValue}
+      onBlur={handleBlur}
     />
   );
 }
