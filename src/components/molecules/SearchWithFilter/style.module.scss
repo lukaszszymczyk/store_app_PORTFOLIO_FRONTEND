@@ -1,7 +1,36 @@
 @import "src/styles/variables";
 
 .searchWithFilters {
+  padding: 1.4rem 0;
   display: flex;
-  gap: $spacing-md;
-  align-items: center;
+  justify-content: center;
+  background-color: $color-background-tertiary;
+}
+
+.searchInput {
+  display: flex;
+  gap: $spacing-sm;
+  border: $spacing-xss solid $color-background-secondary;
+  background-color: $color-background-white;
+  width: 28rem;
+
+  &ClearButtonIcon {
+    color: $color-text-dark-grey;
+    height: 0.9rem;
+    width: 0.9rem;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &ConfirmButtonIcon {
+    color: $color-text-dark-grey;
+    height: 1.2rem;
+    width: 1.2rem;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }

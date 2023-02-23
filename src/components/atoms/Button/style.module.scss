@@ -7,7 +7,6 @@
   gap: 16px;
   height: $spacing-xl;
   border: none;
-  border-radius: $spacing-xs;
   text-align: center;
   text-decoration: none;
   font-size: $spacing-lg;
@@ -15,12 +14,28 @@
 
   &Primary {
     background-color: $color-background-primary;
-    color: $color-text-primary;
+    color: $color-background-secondary;
+
+    &:hover {
+      background-color: $color-text-dark-grey;
+    }
   }
 
   &Secondary {
-    background-color: $color-background-secondary;
-    color: $color-text-secondary;
+    background-color: $color-text-dark-grey;
+    color: $color-background-secondary;
+
+    &:hover {
+      background-color: $color-background-primary;
+    }
+  }
+
+  &Tertiary {
+    background-color: $color-background-white;
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 
   &Icon {

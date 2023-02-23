@@ -1,10 +1,16 @@
 import React from "react";
+import { SiShopify } from "react-icons/si";
 import styles from "./style.module.scss";
 
-export function Footer() {
+export function Footer(): JSX.Element {
   return (
     <div className={styles.footer}>
-      <p className={styles.footerText}>Store App</p>
+      <div className={styles.footerText}>
+        <i>
+          <SiShopify />
+        </i>
+        <p>Store App</p>
+      </div>
     </div>
   );
 }

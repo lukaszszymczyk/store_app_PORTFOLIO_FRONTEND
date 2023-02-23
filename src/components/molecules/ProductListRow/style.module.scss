@@ -2,17 +2,60 @@
 
 .productListRow {
   display: grid;
-  grid-template-columns: 7fr 1fr;
-  padding: $spacing-sm $spacing-xl;
-  grid-gap: $spacing-lg;
-  background: $color-background-white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 100%;
+  height: 20rem;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: $spacing-xl;
+  margin-top: 2rem;
 
-  &Link {
-    text-decoration: none;
+  &Photo {
+    max-width: 100%;
+    max-height: 18rem;
+    object-fit: contain;
+    align-self: center;
   }
 
-  &Option {
-    align-self: center;
+  &Details {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    overflow: hidden;
+  }
+
+  &Title {
+    text-decoration: none;
+    color: $color-text-primary;
+    margin-bottom: $spacing-xss;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &Category {
+    text-transform: capitalize;
+  }
+
+  &Price {
+    color: $color-primary;
+    font-weight: bold;
+  }
+
+  &Description {
+    color: $color-text-secondary;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+
+  &Actions {
+    display: flex;
+    gap: $spacing-md;
+
+    &Button {
+      height: 2rem;
+      width: 2rem;
+    }
   }
 }

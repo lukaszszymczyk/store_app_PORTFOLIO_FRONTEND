@@ -11,6 +11,13 @@ export interface PurchaseFormProps {
   formStepsOutput: UseFormStepsOutput;
 }
 
+const fields = [
+  [
+    { id: "firstName", placeholder: "First Name" },
+    { id: "firstName", placeholder: "First Name" },
+  ],
+];
+
 export function PurchaseForm({ cart, formStepsOutput }: PurchaseFormProps) {
   const formMethods = useForm();
   const { formStep, changeToPreviousStep, changeToNextStep } = formStepsOutput;
@@ -19,6 +26,7 @@ export function PurchaseForm({ cart, formStepsOutput }: PurchaseFormProps) {
 
   const validateFormStep = async (): Promise<boolean> => {
     let isValid = false;
+    // formStep >= 0 && formStep <= 1
     switch (formStep) {
       case 0:
         isValid = await formMethods.trigger(["firstName", "lastName"]);

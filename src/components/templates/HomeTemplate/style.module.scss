@@ -1,8 +1,6 @@
 @import "src/styles/variables";
 
 .homeTemplate {
-  padding: $spacing-xl;
   display: flex;
   flex-direction: column;
-  gap: $spacing-xl;
 }
