@@ -1,24 +1,23 @@
 @import "src/styles/variables";
 
 .header {
-  display: flex;
-  align-items: center;
-  max-height: $default-element-height;
-  width: 100%;
-  background: $color-primary;
-  color: $color-text-primary;
+  background-color: $color-background-secondary;
+  padding: 0 2rem;
 
   &Links {
-    padding: $spacing-lg $spacing-xl;
     display: flex;
-    gap: $spacing-xl;
 
     &Element {
       color: $color-text-primary;
       text-decoration: none;
-      display: flex;
-      flex-direction: row;
-      gap: $spacing-md;
+      padding: 1.5rem 2rem;
+
+      &:hover {
+        color: $color-primary;
+        text-decoration: underline;
+        text-underline-offset: $spacing-sm;
+        text-decoration-thickness: $spacing-xss;
+      }
     }
   }
 }

@@ -1,11 +1,17 @@
-$color-background: #f3f5f9;
-$color-background-primary: #388087;
-$color-background-secondary: #e0e0e0;
 $color-background-white: #ffffff;
-$color-primary: #388087;
+$color-primary: #719196;
+$color-background-secondary: #ededed;
+$color-background-tertiary: #f7f7f7;
+
+$color-text-primary: #25272c;
+$color-text-secondary: #828282;
+
+$color-text-dark-grey: #606060;
+
+$color-background: #f3f5f9;
+$color-background-primary: #719196;
+
 $color-secondary: #c2edce;
-$color-text-primary: #f6f6f2;
-$color-text-secondary: #25272c;
 $color-text-error: #b33930;
 
 $spacing-xss: 2px;
@@ -15,4 +21,10 @@ $spacing-md: 12px;
 $spacing-lg: 16px;
 $spacing-xl: 32px;
 
+$font-size-sm: 10px;
+$font-size-md: 12px;
+$font-size-lg: 14px;
+
+$max-mobile-width: 768px;
+$max-tablet-width: 1280px;
 $default-element-height: 6vh;

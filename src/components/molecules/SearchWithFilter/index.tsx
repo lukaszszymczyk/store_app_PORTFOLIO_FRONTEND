@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "components/atoms/Button";
 import { SearchInput } from "components/atoms/SearchInput";
 import { BsSearch } from "react-icons/bs";
-import { VscListFilter } from "react-icons/vsc";
+import { RxCross1 } from "react-icons/rx";
 import styles from "./style.module.scss";
 
 export interface SearchWithFilterProps {
@@ -40,18 +40,23 @@ export function SearchWithFilter({
 
   return (
     <div className={styles.searchWithFilters}>
-      <SearchInput
-        placeholder="Search"
-        value={searchedPhrase}
-        onChange={handleChangeText}
-      />
-      <Button icon={<BsSearch />} text="Search" onClick={handleSearch} />
-      <Button
-        icon={<VscListFilter />}
-        variant="secondary"
-        text="Clear filters"
-        onClick={handleClearFilter}
-      />
+      <div className={styles.searchInput}>
+        <SearchInput
+          placeholder="Search"
+          value={searchedPhrase}
+          onChange={handleChangeText}
+        />
+        <Button
+          variant="tertiary"
+          icon={<RxCross1 className={styles.searchInputClearButtonIcon} />}
+          onClick={handleClearFilter}
+        />
+        <Button
+          variant="tertiary"
+          icon={<BsSearch className={styles.searchInputConfirmButtonIcon} />}
+          onClick={handleSearch}
+        />
+      </div>
     </div>
   );
 }

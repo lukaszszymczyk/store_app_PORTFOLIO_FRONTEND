@@ -2,8 +2,7 @@
 
 .searchInput {
   background-color: $color-background-white;
-  border: $spacing-xss solid $color-background-secondary;
-  border-radius: $spacing-sm;
-  height: $spacing-xl;
-  width: calc(#{$spacing-xl} * 10);
+  outline: none;
+  border: none;
+  width: 100%;
 }

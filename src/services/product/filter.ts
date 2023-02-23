@@ -16,6 +16,5 @@ export const sliceProductsToCurrentPage = (
   pageNumber: number,
   pageSize: number
 ): Product[] => {
-  const el = products.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
-  return el;
+  return products.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
 };

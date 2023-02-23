@@ -1,19 +1,20 @@
 @import "src/styles/variables";
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  max-height: $default-element-height;
-  width: 100%;
   display: flex;
   align-items: center;
   background-color: $color-primary;
+  color: $color-background-white;
+  padding: 0 2rem;
 
   &Text {
-    margin: 0;
-    padding: $spacing-lg $spacing-xl;
-    font-size: $spacing-lg;
-    color: $color-text-primary;
+    display: flex;
+    gap: $spacing-sm;
+    padding: 1.5rem;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
