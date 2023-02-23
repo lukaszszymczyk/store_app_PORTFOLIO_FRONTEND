@@ -3,7 +3,7 @@
 .productCard {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 3fr 0.5fr;
-  height: calc(2 * #{$default-element-height});
+  height: 8vw;
   color: $color-text-secondary;
 
   &Image {
@@ -17,6 +17,11 @@
     font-weight: bold;
     align-self: center;
     padding: $spacing-sm;
+    @media (max-width: $max-mobile-width) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &Description {

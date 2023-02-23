@@ -7,12 +7,11 @@ export interface ButtonProps {
   variant?: ButtonVariant;
   icon?: JSX.Element;
   onClick?: () => void;
-  isOnlyIconOnMobile?: boolean;
   visibility?: boolean;
 }
 
 export type ButtonType = "submit" | "button";
-export type ButtonVariant = "primary" | "secondary";
+export type ButtonVariant = "primary" | "secondary" | "tertiary";
 
 export function Button({
   text = "",
@@ -20,28 +19,33 @@ export function Button({
   variant = "primary",
   onClick,
   icon,
-  isOnlyIconOnMobile = false,
   visibility = true,
 }: ButtonProps): JSX.Element {
-  const buttonTypeClass =
-    variant === "primary"
-      ? styles.buttonElementPrimary
-      : styles.buttonElementSecondary;
+  const buttonTypeClass = (): string => {
+    switch (variant) {
+      case "primary":
+        return styles.buttonElementPrimary;
+      case "secondary":
+        return styles.buttonElementSecondary;
+      case "tertiary":
+        return styles.buttonElementTertiary;
+    }
+  };
+
   const buttonVisibilityClass = visibility
     ? ""
     : styles.buttonElementVisibilityHidden;
+
   return (
     <button
-      className={`${styles.buttonElement} ${buttonTypeClass} ${buttonVisibilityClass}`}
+      className={`${
+        styles.buttonElement
+      } ${buttonTypeClass()} ${buttonVisibilityClass}`}
       type={type}
       onClick={onClick}
     >
       {icon && <i className={styles.buttonElementIcon}>{icon}</i>}
-      {text && (
-        <p className={isOnlyIconOnMobile ? styles.buttonElementText : ""}>
-          {text}
-        </p>
-      )}
+      {text && <p>{text}</p>}
     </button>
   );
 }

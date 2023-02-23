@@ -30,12 +30,13 @@
     "prettier/prettier": "error",
     "import/prefer-default-export": 0,
     "react-hooks/exhaustive-deps": "warn",
-    "@typescript-eslint/no-empty-interface": 0,
-    "@typescript-eslint/no-unused-vars": 0,
-    "react/button-has-type": 0,
-    "react/require-default-props": 0,
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/button-has-type": "off",
+    "react/require-default-props": "off",
     "default-case": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-no-useless-fragment": "off"
+    "react/jsx-no-useless-fragment": "off",
+    "consistent-return": "off"
   }
 }

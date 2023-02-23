@@ -2,12 +2,10 @@
 
 .productListHeader {
   display: flex;
-  justify-content: space-between;
-  margin: 0 $spacing-xl;
+  flex-direction: column;
 }
 
 .inputElement {
-  background-color: gainsboro;
   border: 1px gray;
   border-radius: 5px;
 }
