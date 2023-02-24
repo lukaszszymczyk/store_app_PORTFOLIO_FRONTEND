@@ -3,18 +3,22 @@
 .footer {
   display: flex;
   align-items: center;
+  margin-top: auto;
   background-color: $color-primary;
   color: $color-background-white;
   padding: 0 2rem;
 
-  &Text {
+  &StoreApp {
     display: flex;
     gap: $spacing-sm;
     padding: 1.5rem;
 
     &:hover {
-      text-decoration: underline;
-      cursor: pointer;
+      cursor: default;
+    }
+
+    &Text {
+      margin: 0;
     }
   }
 }
