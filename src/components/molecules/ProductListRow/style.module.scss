@@ -5,8 +5,7 @@
   width: 100%;
   height: 20rem;
   grid-template-columns: 1fr 3fr;
-  grid-gap: $spacing-xl;
-  margin-top: 2rem;
+  grid-gap: 4rem;
 
   &Photo {
     max-width: 100%;

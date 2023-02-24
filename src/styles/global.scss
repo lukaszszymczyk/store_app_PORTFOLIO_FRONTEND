@@ -28,6 +28,15 @@ p {
   margin: 0;
 }
 
+
+h2 {
+  font-size: 24px;
+  margin: 0;
+  @media (max-width: $max-mobile-width) {
+    font-size: 20px;
+  }
+}
+
 h3 {
   font-size: 17px;
   margin: 0;

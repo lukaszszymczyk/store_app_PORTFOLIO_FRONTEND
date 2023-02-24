@@ -17,9 +17,8 @@ export function HomeTemplate({ allProducts }: HomeTemplateProps): JSX.Element {
     <div className={styles.homeTemplate}>
       <ProductListHeader
         searchWithFilterProps={searchWithFilterProps}
-        pageSelectProps={pageSelectProps}
       />
-      <ProductList products={currentPageProducts} />
+      <ProductList  pageSelectProps={pageSelectProps} products={currentPageProducts} />
     </div>
   );
 }

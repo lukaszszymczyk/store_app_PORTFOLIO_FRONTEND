@@ -4,9 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: $spacing-xl;
-  margin: 0 auto;
+  margin: 3rem auto;
   width: calc(#{$max-tablet-width} - 4rem);
-  padding: 2rem;
   @media (max-width: $max-tablet-width) {
     width: calc(100% - 4rem);
   }

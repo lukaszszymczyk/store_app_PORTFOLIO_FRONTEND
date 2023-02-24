@@ -5,11 +5,11 @@ import styles from "./style.module.scss";
 export function Footer(): JSX.Element {
   return (
     <div className={styles.footer}>
-      <div className={styles.footerText}>
+      <div className={styles.footerStoreApp}>
         <i>
           <SiShopify />
         </i>
-        <p>Store App</p>
+        <p className={styles.footerStoreAppText}>Store App</p>
       </div>
     </div>
   );
