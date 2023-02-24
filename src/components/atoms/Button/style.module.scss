@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: $spacing-sm;
   height: $spacing-xl;
   border: none;
   text-align: center;
@@ -40,6 +40,8 @@
 
   &Icon {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &VisibilityHidden {

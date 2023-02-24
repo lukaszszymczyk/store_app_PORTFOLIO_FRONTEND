@@ -15,11 +15,13 @@ export interface UseProductsOutput {
 
 export const PAGE_SIZE = 5;
 export const INIT_PAGE_INDEX = 0;
+const INIT_PHRASE = "";
 
 export const useProducts = (allProducts: Product[]): UseProductsOutput => {
-  const [filteredProducts, setFilteredProducts] =
-    useState<Product[]>(allProducts);
   const [currentPageIndex, setCurrentPageIndex] = useState(INIT_PAGE_INDEX);
+  const [searchPhrase, setSearchPhrase] = useState(INIT_PHRASE);
+
+  const filteredProducts = filterProductsByPhrase(allProducts, searchPhrase);
 
   const currentPageProducts = sliceProductsToCurrentPage(
     filteredProducts,
@@ -29,12 +31,12 @@ export const useProducts = (allProducts: Product[]): UseProductsOutput => {
 
   const filterProducts = (phrase: string) => {
     setCurrentPageIndex(INIT_PAGE_INDEX);
-    setFilteredProducts(filterProductsByPhrase(allProducts, phrase));
+    setSearchPhrase(phrase);
   };
 
   const clearFilters = () => {
     setCurrentPageIndex(INIT_PAGE_INDEX);
-    setFilteredProducts(allProducts);
+    setSearchPhrase(INIT_PHRASE);
   };
 
   const changeProductsPage = (pageIndex: number) => {
