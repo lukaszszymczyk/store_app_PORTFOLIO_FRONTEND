@@ -3,5 +3,20 @@
 .formFooter {
   margin: $spacing-xl 0;
   display: flex;
+  justify-content: space-between;
   gap: $spacing-lg;
+
+  &Button {
+    width: 14rem;
+  }
+
+  &Navigation {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    &Button {
+      width: 14rem;
+    }
+  }
 }

@@ -11,10 +11,10 @@ import { Checkout } from "pages/Checkout";
 import { PaymentResult } from "pages/PaymentResult";
 
 export function App(): JSX.Element {
-  const cartContext = useCart();
+  const cartProviderValue = useCart();
 
   return (
-    <CartContext.Provider value={cartContext}>
+    <CartContext.Provider value={cartProviderValue}>
       <Router>
         <Header />
         <Routes>

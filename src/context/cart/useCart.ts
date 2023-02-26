@@ -99,7 +99,15 @@ const cartReducer = (
 };
 
 export const useCart = (): CartContextType => {
-  const [cart = [], dispatch] = useReducer(cartReducer, []);
+  const [cartItems = [], dispatch] = useReducer(cartReducer, []);
+
+  const allItemsQuantity = cartItems.reduce((acc, item) => {
+    return acc + item.quantity;
+  }, 0);
+
+  const totalPrice = cartItems.reduce((acc, item) => {
+    return acc + item.quantity * item.price;
+  }, 0);
 
   const addItemToCart = (item: CartItem) =>
     dispatch({ type: "addItem", payload: item });
@@ -114,7 +122,11 @@ export const useCart = (): CartContextType => {
     });
 
   return {
-    cart,
+    cartDetails: {
+      cartItems,
+      allItemsQuantity,
+      totalPrice,
+    },
     addItemToCart,
     removeItemFromCart,
     changeItemQuantity,

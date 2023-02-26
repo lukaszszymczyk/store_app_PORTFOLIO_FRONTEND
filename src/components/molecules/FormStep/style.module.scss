@@ -4,4 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: $spacing-lg;
+
+  &Header {
+    margin-bottom: $spacing-lg;
+  }
 }

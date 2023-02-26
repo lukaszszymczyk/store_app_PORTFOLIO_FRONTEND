@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { CartContext, CartItem } from "context/cart/cartContext";
-import { ProductCard } from "components/atoms/ProductCard";
 import { Button } from "components/atoms/Button";
-import { NumberInput } from "components/atoms/NumberInput";
+import { Link } from "react-router-dom";
+import { GET_PRODUCT_PAGE_PATH } from "config/constants";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { QuantitySelect } from "components/molecules/QuantitySelect";
 import styles from "./style.module.scss";
 
 export interface CartItemRowProps {
@@ -10,25 +12,43 @@ export interface CartItemRowProps {
 }
 
 export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
-  const { quantity, ...productProperties } = cartItem;
-  const product = { ...productProperties };
+  const { id, title, price, description, category, image, quantity } = cartItem;
 
   const { removeItemFromCart, changeItemQuantity } = useContext(CartContext);
 
   const handleChangeQuantity = (value: number) => {
-    changeItemQuantity(product.id, value);
+    changeItemQuantity(id, value);
   };
 
   const handleRemoveFromCart = () => {
-    removeItemFromCart(product.id);
+    removeItemFromCart(id);
   };
 
   return (
-    <div id="cart-item-row" className={styles.cartItemRow}>
-      <ProductCard product={product} />
-      <NumberInput initValue={quantity} onChange={handleChangeQuantity} />
-      <div className={styles.cartItemRowActions}>
-        <Button text="Remove from cart" onClick={handleRemoveFromCart} />
+    <div id="cart-item-row" className={styles.productListRow}>
+      <img className={styles.productListRowPhoto} src={image} alt="product" />
+      <div className={styles.productListRowDetails}>
+        <Link
+          className={styles.productListRowTitle}
+          to={GET_PRODUCT_PAGE_PATH(id.toString())}
+        >
+          <h3>{title}</h3>
+        </Link>
+        <h4 className={styles.productListRowCategory}>{category}</h4>
+        <p className={styles.productListRowPrice}>{price} zł</p>
+        <p className={styles.productListRowDescription}>{description}</p>
+        <div className={styles.productListRowActions}>
+          <QuantitySelect quantity={quantity} onChange={handleChangeQuantity} />
+          <Button
+            variant="tertiary"
+            icon={
+              <RiDeleteBin6Line
+                className={styles.productListRowActionsButton}
+              />
+            }
+            onClick={handleRemoveFromCart}
+          />
+        </div>
       </div>
     </div>
   );

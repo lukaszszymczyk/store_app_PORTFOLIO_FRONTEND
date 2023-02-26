@@ -1,7 +1,8 @@
 @import "src/styles/variables";
 
-.checkoutTemplate {
-  flex-grow: 1;
+.cartItemList {
   display: flex;
   flex-direction: column;
+  gap: $spacing-xl;
+  margin: 3rem auto;
 }
