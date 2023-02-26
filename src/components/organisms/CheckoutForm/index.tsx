@@ -1,38 +1,36 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { payForAllItemsInCart } from "services/payment/stripePayment";
-import { CartItem } from "context/cart/cartContext";
 import { UseFormStepsOutput } from "pages/Checkout/useCheckoutFormSteps";
 import { FormStep } from "components/molecules/FormStep";
 import { FormFooter } from "components/molecules/FormFooter";
+import { CartDetails } from "context/cart/cartContext";
+import { formFields, formStepHeaders } from "services/form/checkoutForm";
+import styles from "./style.module.scss";
 
 export interface PurchaseFormProps {
-  cart: CartItem[];
+  cartDetails: CartDetails;
   formStepsOutput: UseFormStepsOutput;
 }
 
-const fields = [
-  [
-    { id: "firstName", placeholder: "First Name" },
-    { id: "firstName", placeholder: "First Name" },
-  ],
-];
-
-export function PurchaseForm({ cart, formStepsOutput }: PurchaseFormProps) {
+export function CheckoutForm({
+  cartDetails,
+  formStepsOutput,
+}: PurchaseFormProps) {
   const formMethods = useForm();
   const { formStep, changeToPreviousStep, changeToNextStep } = formStepsOutput;
 
   const handlePreviousStep = () => changeToPreviousStep();
 
   const validateFormStep = async (): Promise<boolean> => {
+    if (formStep < 0 || formStep > 1) return false;
     let isValid = false;
-    // formStep >= 0 && formStep <= 1
     switch (formStep) {
       case 0:
-        isValid = await formMethods.trigger(["firstName", "lastName"]);
+        isValid = await formMethods.trigger(formFields[0].map(({ id }) => id));
         break;
       case 1:
-        isValid = await formMethods.trigger(["street", "city"]);
+        isValid = await formMethods.trigger(formFields[1].map(({ id }) => id));
         break;
     }
     return isValid;
@@ -45,13 +43,16 @@ export function PurchaseForm({ cart, formStepsOutput }: PurchaseFormProps) {
 
   const handleSubmit = async () => {
     const isValid = await validateFormStep();
-    if (isValid) payForAllItemsInCart(cart);
+    if (isValid) payForAllItemsInCart(cartDetails.cartItems);
   };
 
   return (
     <FormProvider {...formMethods}>
-      <form>
-        <FormStep step={formStep} />
+      <form className={styles.checkoutForm}>
+        <FormStep
+          header={formStepHeaders[formStep]}
+          fields={formFields[formStep]}
+        />
         <FormFooter
           formStep={formStep}
           changeToPreviousStep={handlePreviousStep}

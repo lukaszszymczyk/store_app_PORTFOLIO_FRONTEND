@@ -3,7 +3,7 @@ import {
   SearchWithFilter,
   SearchWithFilterProps,
 } from "components/molecules/SearchWithFilter";
-import styles from "./style.module.scss";
+import styles from "components/organisms/ProductListHeader/style.module.scss";
 
 export interface ProductListHeaderProps {
   searchWithFilterProps: SearchWithFilterProps;

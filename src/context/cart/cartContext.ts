@@ -5,15 +5,25 @@ export interface CartItem extends Product {
   quantity: number;
 }
 
+export interface CartDetails {
+  cartItems: CartItem[];
+  allItemsQuantity: number;
+  totalPrice: number;
+}
+
 export interface CartContextType {
-  cart: CartItem[];
+  cartDetails: CartDetails;
   addItemToCart: (item: CartItem) => void;
   removeItemFromCart: (id: number) => void;
   changeItemQuantity: (id: number, quantity: number) => void;
 }
 
 const defaultCartContext = {
-  cart: [],
+  cartDetails: {
+    cartItems: [],
+    allItemsQuantity: 0,
+    totalPrice: 0,
+  },
   addItemToCart: () => {},
   removeItemFromCart: () => {},
   changeItemQuantity: () => {},

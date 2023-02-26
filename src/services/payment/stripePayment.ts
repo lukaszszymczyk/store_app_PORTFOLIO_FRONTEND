@@ -34,6 +34,7 @@ export const payForAllItemsInCart = async (cartItems: CartItem[]) => {
       ];
     }, [] as StripeItem[]);
 
+    console.log(CHECKOUT_SUCCESS_PAGE_PATH);
     await stripe.redirectToCheckout({
       lineItems,
       mode: "payment",

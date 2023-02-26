@@ -1,35 +1,18 @@
-import { CartItem } from "context/cart/cartContext";
+import { CartDetails } from "context/cart/cartContext";
 import React from "react";
 import { CartItemList } from "components/organisms/CartItemList";
-import { Button } from "components/atoms/Button";
-import { useNavigate } from "react-router";
-import { CHECKOUT_PAGE_PATH, HOME_PAGE_PATH } from "config/constants";
+import { CartItemListSummary } from "components/organisms/CartItemListSummary";
 import styles from "./style.module.scss";
 
 export interface CartTemplateProps {
-  cart: CartItem[];
+  cartDetails: CartDetails;
 }
 
-export function CartTemplate({ cart }: CartTemplateProps): JSX.Element {
-  const navigate = useNavigate();
-
-  const handleNavigateToPath = (path: string) => {
-    navigate(path);
-  };
-
+export function CartTemplate({ cartDetails }: CartTemplateProps): JSX.Element {
   return (
     <div className={styles.cartTemplate}>
-      <h1>Shopping Cart</h1>
-      <CartItemList cartItems={cart} />
-      <Button
-        text="Continue shopping"
-        onClick={() => handleNavigateToPath(HOME_PAGE_PATH)}
-        variant="secondary"
-      />
-      <Button
-        text="Proceed to checkout"
-        onClick={() => handleNavigateToPath(CHECKOUT_PAGE_PATH)}
-      />
+      <CartItemList cartItems={cartDetails.cartItems} />
+      <CartItemListSummary totalPrice={cartDetails.totalPrice} />
     </div>
   );
 }

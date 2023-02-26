@@ -15,10 +15,11 @@ export function HomeTemplate({ allProducts }: HomeTemplateProps): JSX.Element {
 
   return (
     <div className={styles.homeTemplate}>
-      <ProductListHeader
-        searchWithFilterProps={searchWithFilterProps}
+      <ProductListHeader searchWithFilterProps={searchWithFilterProps} />
+      <ProductList
+        pageSelectProps={pageSelectProps}
+        products={currentPageProducts}
       />
-      <ProductList  pageSelectProps={pageSelectProps} products={currentPageProducts} />
     </div>
   );
 }

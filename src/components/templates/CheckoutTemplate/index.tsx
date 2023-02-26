@@ -1,19 +1,24 @@
-import { CartItem } from "context/cart/cartContext";
+import { CartDetails } from "context/cart/cartContext";
 import React from "react";
-import { PurchaseForm } from "components/organisms/PurchaseForm";
+import { CheckoutForm } from "components/organisms/CheckoutForm";
 import { useCheckoutFormSteps } from "pages/Checkout/useCheckoutFormSteps";
-import styles from "components/templates/CartTemplate/style.module.scss";
+import styles from "./style.module.scss";
 
 export interface CheckoutTemplateProps {
-  cart: CartItem[];
+  cartDetails: CartDetails;
 }
 
-export function CheckoutTemplate({ cart }: CheckoutTemplateProps): JSX.Element {
+export function CheckoutTemplate({
+  cartDetails,
+}: CheckoutTemplateProps): JSX.Element {
   const formStepsOutput = useCheckoutFormSteps();
 
   return (
-    <div className={styles.cartTemplate}>
-      <PurchaseForm cart={cart} formStepsOutput={formStepsOutput} />
+    <div className={styles.checkoutTemplate}>
+      <CheckoutForm
+        cartDetails={cartDetails}
+        formStepsOutput={formStepsOutput}
+      />
     </div>
   );
 }

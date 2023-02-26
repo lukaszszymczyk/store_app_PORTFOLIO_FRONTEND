@@ -1,13 +1,13 @@
 @import "src/styles/variables";
 
-.productList {
+.checkoutForm {
   display: flex;
   flex-direction: column;
   gap: $spacing-xl;
-  margin: 3rem auto;
-  width: calc(#{$max-tablet-width} - 4rem);
+  margin: 4rem auto;
+  width: calc(#{$max-mobile-width} - 4rem);
 
-  @media (max-width: $max-tablet-width) {
+  @media (max-width: $max-mobile-width) {
     width: calc(100% - 4rem);
   }
 }
