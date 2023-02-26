@@ -3,7 +3,7 @@ import { CartTemplate } from "components/templates/CartTemplate";
 import { CartContext } from "context/cart/cartContext";
 
 export function Cart(): JSX.Element {
-  const { cart } = useContext(CartContext);
+  const { cartDetails } = useContext(CartContext);
 
-  return <CartTemplate cart={cart} />;
+  return <CartTemplate cartDetails={cartDetails} />;
 }

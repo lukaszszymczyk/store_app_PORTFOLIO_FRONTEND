@@ -2,41 +2,36 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 
 export interface NumberInputProps {
-  initValue: number;
-  min?: number;
-  max?: number;
-  onChange?: (value: number) => void;
-  onBlur?: (value: number) => void;
+  value: number;
+  onBlur: (value: number) => void;
 }
 
-export type InputType = "number" | "text";
+export function NumberInput({ value, onBlur }: NumberInputProps): JSX.Element {
+  const [inputValue, setInputValue] = useState<number>(value);
 
-export function NumberInput({
-  min,
-  max,
-  initValue,
-  onChange,
-  onBlur,
-}: NumberInputProps): JSX.Element {
+  useEffect(() => {
+    setInputValue(value);
+  }, [value]);
+
   const handleChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
     const inputValueNumber = Number(event.target.value);
-    if (onChange) {
-      onChange(inputValueNumber);
-    }
+    if (!Number.isNaN(inputValueNumber)) setInputValue(inputValueNumber);
   };
 
   const handleBlur = (event: ChangeEvent<HTMLInputElement>) => {
-    if (onBlur) {
-      const inputValueNumber = Number(event.target.value);
-      onBlur(inputValueNumber);
+    const inputValueNumber = Number(event.target.value);
+    if (Number.isNaN(inputValueNumber) || inputValueNumber <= 0) {
+      setInputValue(value);
+      return;
     }
+    setInputValue(inputValueNumber);
+    if (onBlur) onBlur(inputValueNumber);
   };
 
   return (
     <input
       className={styles.numberInput}
-      value={initValue}
-      type="number"
+      value={inputValue}
       onChange={handleChangeValue}
       onBlur={handleBlur}
     />

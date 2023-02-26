@@ -61,26 +61,31 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
   }
+}
 
-  &Actions {
+.productDetailsActions {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  align-items: flex-start;
+
+  &AddToCart {
     display: flex;
-    flex-direction: column;
     gap: $spacing-lg;
-    align-items: flex-start;
 
-    &CartButton {
+    &Button {
       padding: 0.5rem;
       height: 3rem;
       width: 12rem;
     }
+  }
 
-    &HeartButton {
-      font-size: 0.8rem;
-    }
+  &HeartButton {
+    font-size: 0.8rem;
+  }
 
-    &HeartIcon {
-      height: 1.2rem;
-      width: 1.2rem;
-    }
+  &HeartIcon {
+    height: 1.2rem;
+    width: 1.2rem;
   }
 }

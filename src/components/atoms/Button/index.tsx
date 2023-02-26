@@ -9,6 +9,7 @@ export interface ButtonProps {
   onClick?: () => void;
   visibility?: boolean;
   className?: string;
+  countIndex?: number;
 }
 
 export type ButtonType = "submit" | "button";
@@ -21,7 +22,8 @@ export function Button({
   onClick,
   icon,
   visibility = true,
-  className
+  className,
+  countIndex,
 }: ButtonProps): JSX.Element {
   const buttonTypeClass = (): string => {
     switch (variant) {
@@ -47,7 +49,10 @@ export function Button({
       onClick={onClick}
     >
       {icon && <i className={styles.buttonElementIcon}>{icon}</i>}
-      {text && <p>{text}</p>}
+      {countIndex !== undefined && (
+        <span className={styles.buttonElementCountIndex}>{countIndex}</span>
+      )}
+      {text && <p className={styles.buttonElementText}>{text}</p>}
     </button>
   );
 }

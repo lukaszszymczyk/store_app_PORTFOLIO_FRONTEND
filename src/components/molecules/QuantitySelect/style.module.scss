@@ -1,0 +1,25 @@
+@import "src/styles/variables";
+
+.quantitySelect {
+  display: flex;
+
+  &Actions {
+    display: flex;
+    flex-direction: column;
+    height: 3rem;
+
+    &ButtonIncrease {
+      width: 3rem;
+      border: $color-background-secondary solid 2px;
+      border-bottom: $color-background-secondary solid 1px;
+      height: 1.5rem;
+    }
+
+    &ButtonDecrease {
+      width: 3rem;
+      border: $color-background-secondary solid 2px;
+      border-top: $color-background-secondary solid 1px;
+      height: 1.5rem;
+    }
+  }
+}

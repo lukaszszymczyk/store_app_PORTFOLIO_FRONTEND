@@ -4,15 +4,15 @@
   padding: 1.4rem 0;
   display: flex;
   justify-content: center;
-  background-color: $color-background-tertiary;
 }
 
 .searchInput {
   display: flex;
-  gap: $spacing-sm;
+  gap: $spacing-lg;
   border: $spacing-xss solid $color-background-secondary;
   background-color: $color-background-white;
   width: 28rem;
+  padding: 0 $spacing-sm;
 
   &ClearButtonIcon {
     color: $color-text-dark-grey;

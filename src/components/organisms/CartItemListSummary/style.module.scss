@@ -1,0 +1,22 @@
+@import "src/styles/variables";
+
+.cartItemListSummary {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-left: auto;
+
+  &Price {
+    display: flex;
+    gap: $spacing-xs;
+    justify-content: flex-end;
+
+    &Value {
+      color: $color-primary;
+    }
+  }
+
+  &Button {
+    width: 14rem;
+  }
+}

@@ -6,18 +6,29 @@
 
   &Links {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 
-    &Element {
-      color: $color-text-primary;
-      text-decoration: none;
-      padding: 1.5rem 2rem;
+.linkElement {
+  color: $color-text-primary;
+  text-decoration: none;
+  padding: 1.5rem 2rem;
 
-      &:hover {
-        color: $color-primary;
-        text-decoration: underline;
-        text-underline-offset: $spacing-sm;
-        text-decoration-thickness: $spacing-xss;
-      }
+  &StoreApp {
+    &:hover {
+      color: $color-primary;
+      text-decoration: underline;
+      text-underline-offset: $spacing-sm;
+      text-decoration-thickness: $spacing-xss;
+    }
+  }
+
+  &Cart {
+    &Icon {
+      height: 2rem;
+      width: 2rem;
     }
   }
 }

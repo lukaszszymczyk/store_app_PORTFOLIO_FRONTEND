@@ -1,28 +1,28 @@
 import React from "react";
 import { FormInput } from "components/atoms/FormInput";
-import { Message } from "components/molecules/Message";
+import { FormFieldProps } from "services/form/checkoutForm";
 import styles from "./style.module.scss";
 
-export function FormStep(props: { step: number }): JSX.Element {
-  const { step } = props;
+export interface FormStepProps {
+  header: string;
+  fields: FormFieldProps[];
+}
 
-  switch (step) {
-    case 0:
-      return (
-        <div className={styles.formStep}>
-          <h2>Personal data</h2>
-          <FormInput id="firstName" name="First Name" />
-          <FormInput id="lastName" name="Last Name" />
-        </div>
-      );
-    case 1:
-      return (
-        <div className={styles.formStep}>
-          <h2>Address</h2>
-          <FormInput id="street" name="Street" />
-          <FormInput id="city" name="City" />
-        </div>
-      );
-  }
-  return <Message type="error" text="Form failed" />;
+export function FormStep({ header, fields }: FormStepProps): JSX.Element {
+  return (
+    <div className={styles.formStep}>
+      <h2 className={styles.formStepHeader}>{header}</h2>
+      {fields.map(({ id, name, type, isRequired, minLength, maxLength }) => (
+        <FormInput
+          key={id}
+          id={id}
+          name={name}
+          type={type}
+          isRequired={isRequired}
+          minLength={minLength}
+          maxLength={maxLength}
+        />
+      ))}
+    </div>
+  );
 }
