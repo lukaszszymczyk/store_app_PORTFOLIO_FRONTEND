@@ -29,11 +29,13 @@ export function CartItemListSummary({ totalPrice }: CartItemListSummaryProps) {
         variant="secondary"
         className={styles.cartItemListSummaryButton}
       />
-      <Button
-        text="Checkout"
-        onClick={() => handleNavigateToPath(CHECKOUT_PAGE_PATH)}
-        className={styles.cartItemListSummaryButton}
-      />
+      {totalPrice !== 0 && (
+        <Button
+          text="Checkout"
+          onClick={() => handleNavigateToPath(CHECKOUT_PAGE_PATH)}
+          className={styles.cartItemListSummaryButton}
+        />
+      )}
     </div>
   );
 }

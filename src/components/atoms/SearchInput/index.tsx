@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent } from "react";
 import styles from "./style.module.scss";
 
 export interface SearchInputProps {
@@ -7,10 +7,12 @@ export interface SearchInputProps {
   onChange: (text: string) => void;
 }
 
-export function SearchInput(props: SearchInputProps): JSX.Element {
-  const { placeholder, value, onChange } = props;
-
-  const onChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
+export function SearchInput({
+  placeholder,
+  value,
+  onChange,
+}: SearchInputProps): JSX.Element {
+  const handleChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
     onChange(text);
   };
@@ -21,7 +23,7 @@ export function SearchInput(props: SearchInputProps): JSX.Element {
       type="text"
       value={value}
       placeholder={placeholder}
-      onChange={onChangeValue}
+      onChange={handleChangeValue}
     />
   );
 }

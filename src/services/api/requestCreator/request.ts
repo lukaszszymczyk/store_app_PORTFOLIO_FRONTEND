@@ -4,7 +4,7 @@ import {
   HttpStatus,
   RequestParams,
   Response,
-} from "services/api/request/interfaces";
+} from "services/api/requestCreator/interfaces";
 
 export const request = async <ResponseDataType>({
   path,

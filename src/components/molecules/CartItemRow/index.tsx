@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext, CartItem } from "context/cart/cartContext";
+import { CartContext, CartItem } from "contexts/cart/cartContext";
 import { Button } from "components/atoms/Button";
 import { Link } from "react-router-dom";
 import { GET_PRODUCT_PAGE_PATH } from "config/constants";
@@ -35,7 +35,7 @@ export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
           <h3>{title}</h3>
         </Link>
         <h4 className={styles.productListRowCategory}>{category}</h4>
-        <p className={styles.productListRowPrice}>{price} zł</p>
+        <p className={styles.productListRowPrice}>{price.toFixed(2)} zł</p>
         <p className={styles.productListRowDescription}>{description}</p>
         <div className={styles.productListRowActions}>
           <QuantitySelect quantity={quantity} onChange={handleChangeQuantity} />

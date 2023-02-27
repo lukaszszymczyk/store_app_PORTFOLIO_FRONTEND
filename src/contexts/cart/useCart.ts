@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { CartContextType, CartItem } from "context/cart/cartContext";
+import { CartContextType, CartItem } from "contexts/cart/cartContext";
 
 interface AddItemActionType {
   type: "addItem";

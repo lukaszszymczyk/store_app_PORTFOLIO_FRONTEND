@@ -1,4 +1,4 @@
-import { Product } from "services/api/interfaces/Product";
+import { Product } from "types/product";
 
 const isPhraseIncluded = (product: Product, searchPhrase: string): boolean => {
   return product.title.toLowerCase().includes(searchPhrase.toLowerCase());

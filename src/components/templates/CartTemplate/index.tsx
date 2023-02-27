@@ -1,4 +1,4 @@
-import { CartDetails } from "context/cart/cartContext";
+import { CartDetails } from "contexts/cart/cartContext";
 import React from "react";
 import { CartItemList } from "components/organisms/CartItemList";
 import { CartItemListSummary } from "components/organisms/CartItemListSummary";

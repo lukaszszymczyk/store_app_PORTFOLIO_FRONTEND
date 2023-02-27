@@ -1,5 +1,5 @@
 import React from "react";
-import { CartItem } from "context/cart/cartContext";
+import { CartItem } from "contexts/cart/cartContext";
 import { CartItemRow } from "components/molecules/CartItemRow";
 import styles from "./style.module.scss";
 
