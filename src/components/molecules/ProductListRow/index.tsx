@@ -6,8 +6,8 @@ import { Button } from "components/atoms/Button";
 import { Link } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
-import styles from "./style.module.scss";
 import { ImEye } from "react-icons/im";
+import styles from "./style.module.scss";
 
 export interface ProductRowProps {
   product: Product;
