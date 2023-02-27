@@ -1,12 +1,12 @@
 @import "src/styles/variables";
 
 .numberInput {
-  height: calc(3rem - 4px);
-  width: calc(3rem - 4px);
-  background-color: $color-background-white;
+  outline: none;
   border: 2px solid $color-background-secondary;
   border-right: none;
-  text-align: center;
-  outline: none;
+  background-color: $color-background-white;
   padding: 0;
+  width: calc(3rem - 4px);
+  height: calc(3rem - 4px);
+  text-align: center;
 }

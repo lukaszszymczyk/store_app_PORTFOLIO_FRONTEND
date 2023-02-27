@@ -6,11 +6,11 @@
   gap: $spacing-sm;
 
   &Input {
-    height: 2rem;
-    background-color: $color-background-white;
-    border: 2px solid $color-background-secondary;
     outline: none;
+    border: 2px solid $color-background-secondary;
+    background-color: $color-background-white;
     padding: 0 $spacing-md;
+    height: 2rem;
   }
 
   &Error {

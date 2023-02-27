@@ -1,16 +1,16 @@
 @import "src/styles/variables";
 
 .productDetails {
+  grid-gap: 4rem;
   display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 4rem auto;
   width: calc(#{$max-tablet-width} - 4rem);
   max-height: 64rem;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 4rem;
-  margin: 4rem auto;
 
   @media (max-width: $max-tablet-width) {
-    width: calc(#{$max-mobile-width} - 4rem);
     grid-template-columns: 1fr;
+    width: calc(#{$max-mobile-width} - 4rem);
   }
 
   @media (max-width: $max-mobile-width) {
@@ -28,8 +28,8 @@
     }
 
     @media (max-width: $max-mobile-width) {
-      max-height: 24rem;
       margin: 0 auto;
+      max-height: 24rem;
     }
   }
 
@@ -55,19 +55,19 @@
   }
 
   &Description {
-    color: $color-text-secondary;
-    overflow: hidden;
-    display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    color: $color-text-secondary;
   }
 }
 
 .productDetailsActions {
   display: flex;
   flex-direction: column;
-  gap: $spacing-lg;
   align-items: flex-start;
+  gap: $spacing-lg;
 
   &AddToCart {
     display: flex;
@@ -75,8 +75,8 @@
 
     &Button {
       padding: 0.5rem;
-      height: 3rem;
       width: 12rem;
+      height: 3rem;
     }
   }
 
@@ -85,7 +85,7 @@
   }
 
   &HeartIcon {
-    height: 1.2rem;
     width: 1.2rem;
+    height: 1.2rem;
   }
 }

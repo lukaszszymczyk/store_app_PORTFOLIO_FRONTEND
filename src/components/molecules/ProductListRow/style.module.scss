@@ -1,17 +1,17 @@
 @import "src/styles/variables";
 
 .productListRow {
+  grid-gap: 4rem;
   display: grid;
+  grid-template-columns: 1fr 3fr;
   width: 100%;
   height: 20rem;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 4rem;
 
   &Photo {
+    align-self: center;
     max-width: 100%;
     max-height: 18rem;
     object-fit: contain;
-    align-self: center;
   }
 
   &Details {
@@ -22,9 +22,9 @@
   }
 
   &Title {
-    text-decoration: none;
-    color: $color-text-primary;
     margin-bottom: $spacing-xss;
+    color: $color-text-primary;
+    text-decoration: none;
 
     &:hover {
       color: $color-primary;
@@ -41,11 +41,11 @@
   }
 
   &Description {
-    color: $color-text-secondary;
-    overflow: hidden;
-    display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    color: $color-text-secondary;
   }
 
   &Actions {
@@ -53,8 +53,8 @@
     gap: 1.5rem;
 
     &Button {
-      height: 2rem;
       width: 2rem;
+      height: 2rem;
     }
   }
 }
