@@ -1,13 +1,13 @@
 import React from "react";
-import { useProduct } from "pages/Product/useProduct";
+import { useFetchProduct } from "services/features/products/useFetchProduct";
 import { useParams } from "react-router";
 import { ProductTemplate } from "components/templates/ProductTemplate";
-import { Message } from "components/molecules/Message";
+import { Message } from "components/atoms/Message";
 import { Spinner } from "components/atoms/Spinner";
 
 export function Product(): JSX.Element {
   const { id = "" } = useParams();
-  const { product, isLoading, errorMessage } = useProduct(id);
+  const { product, isLoading, errorMessage } = useFetchProduct(id);
 
   if (!product) {
     if (errorMessage) return <Message type="error" text={errorMessage} />;

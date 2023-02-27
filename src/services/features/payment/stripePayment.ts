@@ -3,7 +3,7 @@ import {
   CHECKOUT_SUCCESS_PAGE_PATH,
   CHECKOUT_FAILURE_PAGE_PATH,
 } from "config/constants";
-import { CartItem } from "context/cart/cartContext";
+import { CartItem } from "contexts/cart/cartContext";
 
 interface StripeItem {
   price: string;

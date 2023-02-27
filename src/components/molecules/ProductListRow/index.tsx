@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Product } from "services/api/interfaces/Product";
+import { Product } from "types/product";
 import { GET_PRODUCT_PAGE_PATH } from "config/constants";
-import { CartContext } from "context/cart/cartContext";
+import { CartContext } from "contexts/cart/cartContext";
 import { Button } from "components/atoms/Button";
 import { Link } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -23,7 +23,7 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
   };
 
   return (
-    <li id="product-list-row" className={styles.productListRow}>
+    <div id="product-list-row" className={styles.productListRow}>
       <img className={styles.productListRowPhoto} src={image} alt="product" />
       <div className={styles.productListRowDetails}>
         <Link
@@ -33,7 +33,7 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
           <h3>{title}</h3>
         </Link>
         <h4 className={styles.productListRowCategory}>{category}</h4>
-        <p className={styles.productListRowPrice}>{price} zł</p>
+        <p className={styles.productListRowPrice}>{price.toFixed(2)} zł</p>
         <p className={styles.productListRowDescription}>{description}</p>
         <div className={styles.productListRowActions}>
           <Button
@@ -59,6 +59,6 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
           </Link>
         </div>
       </div>
-    </li>
+    </div>
   );
 }

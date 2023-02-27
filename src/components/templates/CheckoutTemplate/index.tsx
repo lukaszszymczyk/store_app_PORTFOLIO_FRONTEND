@@ -1,7 +1,7 @@
-import { CartDetails } from "context/cart/cartContext";
+import { CartDetails } from "contexts/cart/cartContext";
 import React from "react";
 import { CheckoutForm } from "components/organisms/CheckoutForm";
-import { useCheckoutFormSteps } from "pages/Checkout/useCheckoutFormSteps";
+import { useCheckoutFormSteps } from "components/templates/CheckoutTemplate/useCheckoutFormSteps";
 import styles from "./style.module.scss";
 
 export interface CheckoutTemplateProps {

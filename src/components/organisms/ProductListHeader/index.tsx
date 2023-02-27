@@ -11,7 +11,7 @@ export interface ProductListHeaderProps {
 
 export function ProductListHeader({
   searchWithFilterProps,
-}: ProductListHeaderProps) {
+}: ProductListHeaderProps): JSX.Element {
   return (
     <div className={styles.productListHeader}>
       <SearchWithFilter {...searchWithFilterProps} />

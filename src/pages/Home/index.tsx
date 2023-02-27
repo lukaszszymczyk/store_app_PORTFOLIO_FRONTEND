@@ -1,8 +1,8 @@
 import React from "react";
 import { HomeTemplate } from "components/templates/HomeTemplate";
 import { Spinner } from "components/atoms/Spinner";
-import { Message } from "components/molecules/Message";
-import { useFetchProducts } from "pages/Home/useFetchProducts";
+import { Message } from "components/atoms/Message";
+import { useFetchProducts } from "services/features/products/useFetchProducts";
 
 export function Home(): JSX.Element {
   const { products, isLoading, errorMessage } = useFetchProducts();

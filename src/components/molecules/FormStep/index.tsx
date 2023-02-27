@@ -1,6 +1,6 @@
 import React from "react";
 import { FormInput } from "components/atoms/FormInput";
-import { FormFieldProps } from "services/form/checkoutForm";
+import { FormFieldProps } from "types/checkoutForm";
 import styles from "./style.module.scss";
 
 export interface FormStepProps {

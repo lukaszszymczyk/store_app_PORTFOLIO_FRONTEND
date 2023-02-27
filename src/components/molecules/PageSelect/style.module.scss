@@ -3,12 +3,10 @@
 .pageSelect {
   display: flex;
   gap: $spacing-sm;
-  max-height: $spacing-xl;
+  align-self: center;
 
-  &Number {
-    display: flex;
-    width: $spacing-lg;
-    align-items: center;
-    justify-content: center;
+  &Button {
+    height: 3rem;
+    width: 3rem;
   }
 }

@@ -3,7 +3,7 @@ import { Button } from "components/atoms/Button";
 import {
   MAX_STEP_INDEX,
   UseFormStepsOutput,
-} from "pages/Checkout/useCheckoutFormSteps";
+} from "components/templates/CheckoutTemplate/useCheckoutFormSteps";
 import { useNavigate } from "react-router";
 import { CART_PAGE_PATH } from "config/constants";
 import styles from "./style.module.scss";
@@ -17,7 +17,7 @@ export function FormFooter({
   changeToPreviousStep,
   changeToNextStep,
   onSubmitForm,
-}: FormFooterProps) {
+}: FormFooterProps): JSX.Element {
   const navigate = useNavigate();
 
   const isPreviousButtonEnabled = formStep !== 0;

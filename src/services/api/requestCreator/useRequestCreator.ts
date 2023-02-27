@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { request as apiRequest } from "services/api/request/request";
+import { request as apiRequest } from "services/api/requestCreator/request";
 import {
   RequestParams,
   UseRequestCreatorActions,
   UseRequestCreatorState,
-} from "services/api/request/interfaces";
+} from "services/api/requestCreator/interfaces";
 
 export const useRequestCreator = <ResponseDataType>(
   requestParams: RequestParams

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { Message } from "components/molecules/Message";
+import { Message } from "components/atoms/Message";
 
 export function PaymentResult(): JSX.Element {
   const [searchParams] = useSearchParams();

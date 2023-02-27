@@ -1,6 +1,6 @@
-import { Product } from "services/api/interfaces/Product";
-import { useRequestCreator } from "services/api/request/useRequestCreator";
-import { HttpMethodType } from "services/api/request/interfaces";
+import { Product } from "types/product";
+import { useRequestCreator } from "services/api/requestCreator/useRequestCreator";
+import { HttpMethodType } from "services/api/requestCreator/interfaces";
 import { GET_PRODUCT_API_PATH } from "services/api/apiPaths";
 import { useEffect } from "react";
 
@@ -10,7 +10,7 @@ export interface UseProductOutput {
   errorMessage: string;
 }
 
-export const useProduct = (id: string): UseProductOutput => {
+export const useFetchProduct = (id: string): UseProductOutput => {
   const [
     { result: product, isLoading, errorMessage },
     { request: getProduct },

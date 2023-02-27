@@ -1,5 +1,5 @@
 import React from "react";
-import { Product } from "services/api/interfaces/Product";
+import { Product } from "types/product";
 import { ProductDetails } from "components/organisms/ProductDetails";
 import styles from "./style.module.scss";
 

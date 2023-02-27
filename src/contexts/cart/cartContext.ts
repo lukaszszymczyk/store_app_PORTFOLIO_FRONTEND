@@ -1,5 +1,5 @@
 import React from "react";
-import { Product } from "services/api/interfaces/Product";
+import { Product } from "types/product";
 
 export interface CartItem extends Product {
   quantity: number;

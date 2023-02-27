@@ -1,8 +1,0 @@
-@import "../../../styles/variables";
-
-.errorMessage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 2 * #{$default-element-height});
-}
