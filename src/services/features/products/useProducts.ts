@@ -1,9 +1,9 @@
-import { Product } from "services/api/interfaces/Product";
+import { Product } from "types/product";
 import { useState } from "react";
 import {
   filterProductsByPhrase,
   sliceProductsToCurrentPage,
-} from "services/product/filter";
+} from "services/features/products/utils/filter";
 import { SearchWithFilterProps } from "components/molecules/SearchWithFilter";
 import { PageSelectProps } from "components/molecules/PageSelect";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "components/molecules/Message/style.module.scss";
 import { Icon } from "components/atoms/Icon";
+import styles from "./style.module.scss";
 
 export type MessageType = "error" | "success" | "info";
 
@@ -13,9 +13,9 @@ export function Message(props: MessageProps): JSX.Element {
   const { type, text } = props;
 
   return (
-    <div className={styles.errorMessage}>
+    <div className={styles.message}>
       <Icon type={type} />
-      <p>{text}</p>
+      <h2>{text}</h2>
     </div>
   );
 }

@@ -6,10 +6,10 @@ export interface ButtonProps {
   type?: ButtonType;
   variant?: ButtonVariant;
   icon?: JSX.Element;
-  onClick?: () => void;
   visibility?: boolean;
   className?: string;
   countIndex?: number;
+  onClick?: () => void;
 }
 
 export type ButtonType = "submit" | "button";
@@ -19,11 +19,11 @@ export function Button({
   text = "",
   type = "button",
   variant = "primary",
-  onClick,
   icon,
   visibility = true,
   className,
   countIndex,
+  onClick,
 }: ButtonProps): JSX.Element {
   const buttonTypeClass = (): string => {
     switch (variant) {

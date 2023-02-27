@@ -1,8 +1,8 @@
 import React from "react";
-import { Product } from "services/api/interfaces/Product";
+import { Product } from "types/product";
 import { ProductList } from "components/organisms/ProductList";
 import { ProductListHeader } from "components/organisms/ProductListHeader";
-import { useProducts } from "pages/Home/useProducts";
+import { useProducts } from "services/features/products/useProducts";
 import styles from "./style.module.scss";
 
 export interface HomeTemplateProps {

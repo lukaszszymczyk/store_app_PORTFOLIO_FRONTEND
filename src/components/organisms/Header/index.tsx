@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { CART_PAGE_PATH, HOME_PAGE_PATH } from "config/constants";
 import { Button } from "components/atoms/Button";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { CartContext } from "context/cart/cartContext";
+import { CartContext } from "contexts/cart/cartContext";
 import styles from "./style.module.scss";
 
-export function Header() {
+export function Header(): JSX.Element {
   const { cartDetails } = useContext(CartContext);
 
   return (

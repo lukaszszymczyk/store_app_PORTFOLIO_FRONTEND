@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+
+.message {
+  flex-grow: 1;
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,11 +1,14 @@
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { payForAllItemsInCart } from "services/payment/stripePayment";
-import { UseFormStepsOutput } from "pages/Checkout/useCheckoutFormSteps";
+import { payForAllItemsInCart } from "services/features/payment/stripePayment";
+import { UseFormStepsOutput } from "components/templates/CheckoutTemplate/useCheckoutFormSteps";
 import { FormStep } from "components/molecules/FormStep";
 import { FormFooter } from "components/molecules/FormFooter";
-import { CartDetails } from "context/cart/cartContext";
-import { formFields, formStepHeaders } from "services/form/checkoutForm";
+import { CartDetails } from "contexts/cart/cartContext";
+import {
+  formFields,
+  formStepHeaders,
+} from "components/organisms/CheckoutForm/formStructure";
 import styles from "./style.module.scss";
 
 export interface PurchaseFormProps {
@@ -16,7 +19,7 @@ export interface PurchaseFormProps {
 export function CheckoutForm({
   cartDetails,
   formStepsOutput,
-}: PurchaseFormProps) {
+}: PurchaseFormProps): JSX.Element {
   const formMethods = useForm();
   const { formStep, changeToPreviousStep, changeToNextStep } = formStepsOutput;
 
