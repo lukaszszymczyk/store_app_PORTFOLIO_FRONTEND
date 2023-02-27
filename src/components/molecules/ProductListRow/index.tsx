@@ -6,8 +6,8 @@ import { Button } from "components/atoms/Button";
 import { Link } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
-import { BiShow } from "react-icons/bi";
 import styles from "./style.module.scss";
+import { ImEye } from "react-icons/im";
 
 export interface ProductRowProps {
   product: Product;
@@ -54,7 +54,7 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
           <Link to={GET_PRODUCT_PAGE_PATH(id.toString())}>
             <Button
               variant="tertiary"
-              icon={<BiShow className={styles.productListRowActionsButton} />}
+              icon={<ImEye className={styles.productListRowActionsButton} />}
             />
           </Link>
         </div>
