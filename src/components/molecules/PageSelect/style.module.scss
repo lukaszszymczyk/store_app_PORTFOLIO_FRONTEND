@@ -2,11 +2,11 @@
 
 .pageSelect {
   display: flex;
-  gap: $spacing-sm;
   align-self: center;
+  gap: $spacing-sm;
 
   &Button {
-    height: 3rem;
     width: 3rem;
+    height: 3rem;
   }
 }

@@ -9,16 +9,16 @@
     height: 3rem;
 
     &ButtonIncrease {
-      width: 3rem;
       border: $color-background-secondary solid 2px;
       border-bottom: $color-background-secondary solid 1px;
+      width: 3rem;
       height: 1.5rem;
     }
 
     &ButtonDecrease {
-      width: 3rem;
       border: $color-background-secondary solid 2px;
       border-top: $color-background-secondary solid 1px;
+      width: 3rem;
       height: 1.5rem;
     }
   }

@@ -1,9 +1,9 @@
 @import "src/styles/variables";
 
 .searchWithFilters {
-  padding: 1.4rem 0;
   display: flex;
   justify-content: center;
+  padding: 1.4rem 0;
 }
 
 .searchInput {
@@ -11,13 +11,13 @@
   gap: $spacing-lg;
   border: $spacing-xss solid $color-background-secondary;
   background-color: $color-background-white;
-  width: 28rem;
   padding: 0 $spacing-sm;
+  width: 28rem;
 
   &ClearButtonIcon {
-    color: $color-text-dark-grey;
-    height: 0.9rem;
     width: 0.9rem;
+    height: 0.9rem;
+    color: $color-text-dark-grey;
 
     &:hover {
       color: $color-primary;
@@ -25,9 +25,9 @@
   }
 
   &ConfirmButtonIcon {
-    color: $color-text-dark-grey;
-    height: 1.2rem;
     width: 1.2rem;
+    height: 1.2rem;
+    color: $color-text-dark-grey;
 
     &:hover {
       color: $color-primary;

@@ -8,8 +8,8 @@
 
   &Price {
     display: flex;
-    gap: $spacing-xs;
     justify-content: flex-end;
+    gap: $spacing-xs;
 
     &Value {
       color: $color-primary;

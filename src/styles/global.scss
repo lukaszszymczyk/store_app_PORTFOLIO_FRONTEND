@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=PTSans:wght@300;400;500;600&display=swap");
 
 html {
-  font-size: 16px;
-  letter-spacing: 1px;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: 16px;
+  letter-spacing: 1px;
   @media (max-width: $max-mobile-width) {
     font-size: 12px;
     letter-spacing: 0.8px;
@@ -13,9 +13,9 @@ html {
 }
 
 body {
-  font-family: "PT Sans", sans-serif;
-  color: $color-text-primary;
   background-color: $color-background-white;
+  color: $color-text-primary;
+  font-family: "PT Sans", sans-serif;
 }
 
 #root {
@@ -29,25 +29,25 @@ p {
 }
 
 h2 {
-  font-size: 24px;
   margin: 0;
+  font-size: 24px;
   @media (max-width: $max-mobile-width) {
     font-size: 20px;
   }
 }
 
 h3 {
-  font-size: 17px;
   margin: 0;
+  font-size: 17px;
   @media (max-width: $max-mobile-width) {
     font-size: 14px;
   }
 }
 
 h4 {
-  font-size: 17px;
-  font-weight: normal;
   margin: 0;
+  font-weight: normal;
+  font-size: 17px;
   @media (max-width: $max-mobile-width) {
     font-size: 13px;
   }
