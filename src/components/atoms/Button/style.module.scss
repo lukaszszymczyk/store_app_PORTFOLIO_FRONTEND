@@ -2,15 +2,15 @@
 
 .buttonElement {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: $spacing-xl;
+  align-items: center;
+  cursor: pointer;
   border: none;
+  padding: 0;
+  height: $spacing-xl;
+  font-size: $spacing-lg;
   text-align: center;
   text-decoration: none;
-  font-size: $spacing-lg;
-  cursor: pointer;
-  padding: 0;
 
   &Primary {
     background-color: $color-background-primary;
@@ -40,8 +40,8 @@
 
   &Icon {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
 
   &Text {
@@ -49,16 +49,16 @@
   }
 
   &CountIndex {
-    font-size: 0.8rem;
+    margin-bottom: auto;
+    margin-left: -$spacing-xss;
     border-radius: 50%;
     background-color: $color-background-primary;
     width: 1rem;
     height: 1rem;
+    color: $color-background-white;
+    font-size: 0.8rem;
     line-height: 1rem;
     text-align: center;
-    color: $color-background-white;
-    margin-bottom: auto;
-    margin-left: -$spacing-xss;
   }
 
   &VisibilityHidden {
