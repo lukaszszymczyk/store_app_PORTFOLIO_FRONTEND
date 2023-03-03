@@ -9,8 +9,9 @@
 
   &StoreApp {
     display: flex;
-    gap: $spacing-sm;
+    justify-content: space-between;
     padding: 1.5rem;
+    width: 100%;
 
     &:hover {
       cursor: default;
@@ -19,5 +20,14 @@
     &Text {
       margin: 0;
     }
+
+    &Links {
+      display: flex;
+      gap: $spacing-md;
+    }
   }
+}
+
+.link {
+  color: $color-background-white;
 }
