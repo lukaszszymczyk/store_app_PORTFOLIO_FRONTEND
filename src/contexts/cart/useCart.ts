@@ -57,8 +57,8 @@ const changeItemQuantityAction = (
 ) => {
   const { id, quantity } = payload;
 
-  if (quantity < 1) {
-    console.error("Quantity cannot be less than 1");
+  if (quantity < 1 || quantity > 10) {
+    console.error("Quantity should be between 1 and 10");
     return prevState;
   }
 
