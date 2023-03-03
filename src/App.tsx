@@ -9,12 +9,14 @@ import { useCart } from "contexts/cart/useCart";
 import { Cart } from "pages/Cart";
 import { Checkout } from "pages/Checkout";
 import { PaymentResult } from "pages/PaymentResult";
+import { Toaster } from "react-hot-toast";
 
 export function App(): JSX.Element {
   const cartProviderValue = useCart();
 
   return (
     <CartContext.Provider value={cartProviderValue}>
+      <Toaster />
       <Router>
         <Header />
         <Routes>
