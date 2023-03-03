@@ -16,7 +16,7 @@ export function Footer(): JSX.Element {
             rel="noopener noreferrer"
           >
             <i>
-              <BsGithub />
+              <BsGithub className={styles.linkIcon} />
             </i>
           </a>
           <a
@@ -26,7 +26,7 @@ export function Footer(): JSX.Element {
             rel="noopener noreferrer"
           >
             <i>
-              <BsLinkedin />
+              <BsLinkedin className={styles.linkIcon} />
             </i>
           </a>
         </div>
