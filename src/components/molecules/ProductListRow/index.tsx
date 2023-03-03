@@ -5,8 +5,8 @@ import { CartContext } from "contexts/cart/cartContext";
 import { Button } from "components/atoms/Button";
 import { Link } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
-import { AiOutlineHeart } from "react-icons/ai";
 import { ImEye } from "react-icons/im";
+import { showAddToCartToast } from "utils/notifications/toast";
 import styles from "./style.module.scss";
 
 export interface ProductRowProps {
@@ -19,6 +19,7 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
   const { addItemToCart } = useContext(CartContext);
 
   const handleAddToCart = () => {
+    showAddToCartToast();
     addItemToCart({ ...product, quantity: 1 });
   };
 
@@ -44,12 +45,6 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
               />
             }
             onClick={handleAddToCart}
-          />
-          <Button
-            variant="tertiary"
-            icon={
-              <AiOutlineHeart className={styles.productListRowActionsButton} />
-            }
           />
           <Link to={GET_PRODUCT_PAGE_PATH(id.toString())}>
             <Button
