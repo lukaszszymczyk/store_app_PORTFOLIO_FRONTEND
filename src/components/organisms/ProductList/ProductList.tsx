@@ -1,8 +1,11 @@
 import React from "react";
-import { ProductListRow } from "components/molecules/ProductListRow";
+import { ProductListRow } from "components/molecules/ProductListRow/ProductListRow";
 import { Product } from "types/product";
 import styles from "components/organisms/ProductList/style.module.scss";
-import { PageSelect, PageSelectProps } from "components/molecules/PageSelect";
+import {
+  PageSelect,
+  PageSelectProps,
+} from "components/molecules/PageSelect/PageSelect";
 
 export interface ProductListProps {
   products: Product[];

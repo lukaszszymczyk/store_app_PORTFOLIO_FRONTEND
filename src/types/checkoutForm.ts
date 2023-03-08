@@ -1,4 +1,4 @@
-import { FormInputType } from "components/atoms/FormInput";
+import { FormInputType } from "components/atoms/FormInput/FormInput";
 
 export interface FormFieldProps {
   id: string;

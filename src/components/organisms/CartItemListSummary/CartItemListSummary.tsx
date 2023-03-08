@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "components/atoms/Button";
+import { Button } from "components/atoms/Button/Button";
 import { CHECKOUT_PAGE_PATH, HOME_PAGE_PATH } from "config/constants";
 import { useNavigate } from "react-router";
 import styles from "./style.module.scss";

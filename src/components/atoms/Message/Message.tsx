@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "components/atoms/Icon";
+import { Icon } from "components/atoms/Icon/Icon";
 import styles from "./style.module.scss";
 
 export type MessageType = "error" | "success" | "info";

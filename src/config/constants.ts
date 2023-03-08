@@ -1,4 +1,5 @@
 export const { REACT_APP_URL } = process.env;
+export const APP_URL = "http://localhost:3000";
 export const API_URL = "https://fakestoreapi.com";
 
 export const HOME_PAGE_PATH = "/";
