@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { CartTemplate } from "components/templates/CartTemplate";
+import { CartTemplate } from "components/templates/CartTemplate/CartTemplate";
 import { CartContext } from "contexts/cart/cartContext";
-import { PageWrapper } from "pages/PageWrapper";
+import { PageWrapper } from "pages/PageWrapper/PageWrapper";
 
 export function Cart(): JSX.Element {
   const { cartDetails } = useContext(CartContext);

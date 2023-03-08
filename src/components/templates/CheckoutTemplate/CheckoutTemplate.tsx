@@ -1,6 +1,6 @@
 import { CartDetails } from "contexts/cart/cartContext";
 import React from "react";
-import { CheckoutForm } from "components/organisms/CheckoutForm";
+import { CheckoutForm } from "components/organisms/CheckoutForm/CheckoutForm";
 import { useCheckoutFormSteps } from "components/templates/CheckoutTemplate/useCheckoutFormSteps";
 import styles from "./style.module.scss";
 

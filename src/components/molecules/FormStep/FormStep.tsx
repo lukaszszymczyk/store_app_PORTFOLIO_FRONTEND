@@ -1,5 +1,5 @@
 import React from "react";
-import { FormInput } from "components/atoms/FormInput";
+import { FormInput } from "components/atoms/FormInput/FormInput";
 import { FormFieldProps } from "types/checkoutForm";
 import styles from "./style.module.scss";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { NumberInput } from "components/atoms/NumberInput";
-import { Button } from "components/atoms/Button";
+import { NumberInput } from "components/atoms/NumberInput/NumberInput";
+import { Button } from "components/atoms/Button/Button";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import styles from "./style.module.scss";
 
