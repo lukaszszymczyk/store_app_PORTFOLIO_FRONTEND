@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Product } from "types/product";
 import { GET_PRODUCT_PAGE_PATH } from "config/constants";
 import { CartContext } from "contexts/cart/cartContext";
-import { Button } from "components/atoms/Button";
+import { Button } from "components/atoms/Button/Button";
 import { Link } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
 import { ImEye } from "react-icons/im";
@@ -36,7 +36,10 @@ export function ProductListRow({ product }: ProductRowProps): JSX.Element {
         <h4 className={styles.productListRowCategory}>{category}</h4>
         <p className={styles.productListRowPrice}>{price.toFixed(2)} zł</p>
         <p className={styles.productListRowDescription}>{description}</p>
-        <div className={styles.productListRowActions}>
+        <div
+          id="product-list-row-actions"
+          className={styles.productListRowActions}
+        >
           <Button
             variant="tertiary"
             icon={

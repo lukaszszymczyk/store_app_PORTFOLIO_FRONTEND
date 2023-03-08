@@ -2,7 +2,7 @@ import { RegisterOptions } from "react-hook-form";
 import {
   FormInputProps,
   FormInputType,
-} from "components/atoms/FormInput/index";
+} from "components/atoms/FormInput/FormInput";
 
 const getPatternValue = (type: FormInputType): RegExp => {
   switch (type) {

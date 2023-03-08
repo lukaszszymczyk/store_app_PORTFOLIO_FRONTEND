@@ -1,9 +1,9 @@
 import React from "react";
-import { HomeTemplate } from "components/templates/HomeTemplate";
-import { Spinner } from "components/atoms/Spinner";
-import { Message } from "components/atoms/Message";
+import { HomeTemplate } from "components/templates/HomeTemplate/HomeTemplate";
+import { Spinner } from "components/atoms/Spinner/Spinner";
+import { Message } from "components/atoms/Message/Message";
 import { useFetchProducts } from "services/features/products/useFetchProducts";
-import { PageWrapper } from "pages/PageWrapper";
+import { PageWrapper } from "pages/PageWrapper/PageWrapper";
 
 export function Home(): JSX.Element {
   const { products, isLoading, errorMessage } = useFetchProducts();

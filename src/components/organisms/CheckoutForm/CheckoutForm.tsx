@@ -2,8 +2,8 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { payForAllItemsInCart } from "services/features/payment/stripePayment";
 import { UseFormStepsOutput } from "components/templates/CheckoutTemplate/useCheckoutFormSteps";
-import { FormStep } from "components/molecules/FormStep";
-import { FormFooter } from "components/molecules/FormFooter";
+import { FormStep } from "components/molecules/FormStep/FormStep";
+import { FormFooter } from "components/molecules/FormFooter/FormFooter";
 import { CartDetails } from "contexts/cart/cartContext";
 import {
   formFields,
