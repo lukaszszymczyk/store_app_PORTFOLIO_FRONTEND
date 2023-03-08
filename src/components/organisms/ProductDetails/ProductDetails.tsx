@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Product } from "types/product";
-import { Button } from "components/atoms/Button";
+import { Button } from "components/atoms/Button/Button";
 import { CartContext } from "contexts/cart/cartContext";
 import styles from "components/organisms/ProductDetails/style.module.scss";
-import { QuantitySelect } from "components/molecules/QuantitySelect";
+import { QuantitySelect } from "components/molecules/QuantitySelect/QuantitySelect";
 import { showAddToCartToast } from "utils/notifications/toast";
 
 export interface ProductDetailsProps {

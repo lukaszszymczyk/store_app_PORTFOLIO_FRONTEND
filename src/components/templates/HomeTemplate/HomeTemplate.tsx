@@ -1,7 +1,7 @@
 import React from "react";
 import { Product } from "types/product";
-import { ProductList } from "components/organisms/ProductList";
-import { ProductListHeader } from "components/organisms/ProductListHeader";
+import { ProductList } from "components/organisms/ProductList/ProductList";
+import { ProductListHeader } from "components/organisms/ProductListHeader/ProductListHeader";
 import { useProducts } from "services/features/products/useProducts";
 import styles from "./style.module.scss";
 

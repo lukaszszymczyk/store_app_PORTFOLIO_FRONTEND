@@ -2,7 +2,7 @@ import React from "react";
 import {
   SearchWithFilter,
   SearchWithFilterProps,
-} from "components/molecules/SearchWithFilter";
+} from "components/molecules/SearchWithFilter/SearchWithFilter";
 import styles from "components/organisms/ProductListHeader/style.module.scss";
 
 export interface ProductListHeaderProps {

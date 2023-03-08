@@ -4,8 +4,8 @@ import {
   filterProductsByPhrase,
   sliceProductsToCurrentPage,
 } from "services/features/products/utils/filter";
-import { SearchWithFilterProps } from "components/molecules/SearchWithFilter";
-import { PageSelectProps } from "components/molecules/PageSelect";
+import { SearchWithFilterProps } from "components/molecules/SearchWithFilter/SearchWithFilter";
+import { PageSelectProps } from "components/molecules/PageSelect/PageSelect";
 
 export interface UseProductsOutput {
   currentPageProducts: Product[];
