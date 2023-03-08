@@ -1,6 +1,6 @@
 import React from "react";
 import { Product } from "types/product";
-import { ProductDetails } from "components/organisms/ProductDetails";
+import { ProductDetails } from "components/organisms/ProductDetails/ProductDetails";
 import styles from "./style.module.scss";
 
 export interface ProductTemplateProps {

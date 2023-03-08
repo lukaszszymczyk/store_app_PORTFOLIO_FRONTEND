@@ -1,7 +1,7 @@
 import { CartDetails } from "contexts/cart/cartContext";
 import React from "react";
-import { CartItemList } from "components/organisms/CartItemList";
-import { CartItemListSummary } from "components/organisms/CartItemListSummary";
+import { CartItemList } from "components/organisms/CartItemList/CartItemList";
+import { CartItemListSummary } from "components/organisms/CartItemListSummary/CartItemListSummary";
 import styles from "./style.module.scss";
 
 export interface CartTemplateProps {

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { CartContext, CartItem } from "contexts/cart/cartContext";
-import { Button } from "components/atoms/Button";
+import { Button } from "components/atoms/Button/Button";
 import { Link } from "react-router-dom";
 import { GET_PRODUCT_PAGE_PATH } from "config/constants";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { QuantitySelect } from "components/molecules/QuantitySelect";
+import { QuantitySelect } from "components/molecules/QuantitySelect/QuantitySelect";
 import { showRemoveItemFromCartToast } from "utils/notifications/toast";
 import styles from "./style.module.scss";
 
@@ -39,7 +39,10 @@ export function CartItemRow({ cartItem }: CartItemRowProps): JSX.Element {
         <h4 className={styles.productListRowCategory}>{category}</h4>
         <p className={styles.productListRowPrice}>{price.toFixed(2)} zł</p>
         <p className={styles.productListRowDescription}>{description}</p>
-        <div className={styles.productListRowActions}>
+        <div
+          id="cart-item-row-actions"
+          className={styles.productListRowActions}
+        >
           <QuantitySelect
             min={1}
             max={10}

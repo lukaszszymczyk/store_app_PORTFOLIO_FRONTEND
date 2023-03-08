@@ -1,10 +1,10 @@
 import React from "react";
 import { useFetchProduct } from "services/features/products/useFetchProduct";
 import { useParams } from "react-router";
-import { Spinner } from "components/atoms/Spinner";
-import { ProductTemplate } from "components/templates/ProductTemplate";
-import { Message } from "components/atoms/Message";
-import { PageWrapper } from "pages/PageWrapper";
+import { Spinner } from "components/atoms/Spinner/Spinner";
+import { ProductTemplate } from "components/templates/ProductTemplate/ProductTemplate";
+import { Message } from "components/atoms/Message/Message";
+import { PageWrapper } from "pages/PageWrapper/PageWrapper";
 
 export function Product(): JSX.Element {
   const { id = "" } = useParams();

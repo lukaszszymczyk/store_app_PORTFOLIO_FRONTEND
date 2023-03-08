@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { CheckoutTemplate } from "components/templates/CheckoutTemplate";
+import { CheckoutTemplate } from "components/templates/CheckoutTemplate/CheckoutTemplate";
 import { CartContext } from "contexts/cart/cartContext";
-import { PageWrapper } from "pages/PageWrapper";
+import { PageWrapper } from "pages/PageWrapper/PageWrapper";
 
 export function Checkout(): JSX.Element {
   const { cartDetails } = useContext(CartContext);

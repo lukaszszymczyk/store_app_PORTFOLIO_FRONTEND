@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "components/atoms/Button";
-import { SearchInput } from "components/atoms/SearchInput";
+import { Button } from "components/atoms/Button/Button";
+import { SearchInput } from "components/atoms/SearchInput/SearchInput";
 import { BsSearch } from "react-icons/bs";
 import { RxCross1 } from "react-icons/rx";
 import styles from "./style.module.scss";

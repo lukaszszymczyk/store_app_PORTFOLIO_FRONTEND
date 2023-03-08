@@ -1,6 +1,6 @@
 import React from "react";
 import { CartItem } from "contexts/cart/cartContext";
-import { CartItemRow } from "components/molecules/CartItemRow";
+import { CartItemRow } from "components/molecules/CartItemRow/CartItemRow";
 import styles from "./style.module.scss";
 
 export interface CartItemListProps {
