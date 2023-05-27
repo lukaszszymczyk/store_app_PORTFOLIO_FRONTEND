@@ -1,15 +1,17 @@
-import { Product } from "types/product";
+import { Filters, FilterSettings, FilterType, Product } from "types/product";
 import { useState } from "react";
 import {
-  filterProductsByPhrase,
+  extractAvailableFilters,
+  filterProducts,
   sliceProductsToCurrentPage,
 } from "services/features/products/utils/filter";
-import { SearchWithFilterProps } from "components/molecules/SearchWithFilter/SearchWithFilter";
 import { PageSelectProps } from "components/molecules/PageSelect/PageSelect";
 
 export interface UseProductsOutput {
   currentPageProducts: Product[];
-  searchWithFilterProps: SearchWithFilterProps;
+  filterSettings: FilterSettings;
+  selectedFilters: Filters;
+  searchProducts: (params: { phrase?: string; filters?: Filters }) => void;
   pageSelectProps: PageSelectProps;
 }
 
@@ -20,8 +22,18 @@ const INIT_PHRASE = "";
 export const useProducts = (allProducts: Product[]): UseProductsOutput => {
   const [currentPageIndex, setCurrentPageIndex] = useState(INIT_PAGE_INDEX);
   const [searchPhrase, setSearchPhrase] = useState(INIT_PHRASE);
+  const [selectedFilters, setSelectedFilters] = useState<Filters>(
+    {} as Filters
+  );
 
-  const filteredProducts = filterProductsByPhrase(allProducts, searchPhrase);
+  const filteredProducts = filterProducts(
+    allProducts,
+    searchPhrase,
+    selectedFilters
+  );
+  const filterSettings: FilterSettings = {
+    categoryOptions: extractAvailableFilters(allProducts),
+  };
 
   const currentPageProducts = sliceProductsToCurrentPage(
     filteredProducts,
@@ -29,14 +41,14 @@ export const useProducts = (allProducts: Product[]): UseProductsOutput => {
     PAGE_SIZE
   );
 
-  const filterProducts = (phrase: string) => {
+  const searchProducts = (params: { phrase?: string; filters?: Filters }) => {
     setCurrentPageIndex(INIT_PAGE_INDEX);
-    setSearchPhrase(phrase);
-  };
-
-  const clearFilters = () => {
-    setCurrentPageIndex(INIT_PAGE_INDEX);
-    setSearchPhrase(INIT_PHRASE);
+    if (params.phrase) {
+      setSearchPhrase(params.phrase);
+    }
+    if (params.filters) {
+      setSelectedFilters(params.filters);
+    }
   };
 
   const changeProductsPage = (pageIndex: number) => {
@@ -45,10 +57,9 @@ export const useProducts = (allProducts: Product[]): UseProductsOutput => {
 
   return {
     currentPageProducts,
-    searchWithFilterProps: {
-      filterProducts,
-      clearFilters,
-    },
+    filterSettings,
+    selectedFilters,
+    searchProducts,
     pageSelectProps: {
       currentPageIndex,
       minPageIndex: INIT_PAGE_INDEX,

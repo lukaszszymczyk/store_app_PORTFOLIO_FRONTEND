@@ -4,17 +4,20 @@ import {
   SearchWithFilterProps,
 } from "components/molecules/SearchWithFilter/SearchWithFilter";
 import styles from "components/organisms/ProductListHeader/style.module.scss";
+import { Filters } from "types/product";
 
 export interface ProductListHeaderProps {
-  searchWithFilterProps: SearchWithFilterProps;
+  selectedFilters: Filters;
+  onSearchProducts: (params: { phrase?: string; filters?: Filters }) => void;
 }
 
 export function ProductListHeader({
-  searchWithFilterProps,
+  selectedFilters,
+  onSearchProducts,
 }: ProductListHeaderProps): JSX.Element {
   return (
     <div className={styles.productListHeader}>
-      <SearchWithFilter {...searchWithFilterProps} />
+      <SearchWithFilter onSearchProducts={onSearchProducts} />
     </div>
   );
 }

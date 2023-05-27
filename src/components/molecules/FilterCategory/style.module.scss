@@ -1,0 +1,36 @@
+@import "src/styles/variables";
+
+.filterCategory {
+  margin: $spacing-xl;
+  border: $color-text-light-grey 1px solid;
+  padding-bottom: 12px;
+
+  &Header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: $color-background-tertiary;
+    padding: 0 $spacing-md;
+    height: 40px;
+    color: $color-text-primary;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: column;
+
+    &Item {
+      padding: $spacing-md;
+      color: $color-text-secondary;
+      font-size: 14px;
+      text-transform: capitalize;
+
+      &:hover {
+        cursor: pointer;
+        color: $color-background-primary;
+      }
+    }
+  }
+}
