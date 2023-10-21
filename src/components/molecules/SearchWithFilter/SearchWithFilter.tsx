@@ -4,24 +4,23 @@ import { SearchInput } from "components/atoms/SearchInput/SearchInput";
 import { BsSearch } from "react-icons/bs";
 import { RxCross1 } from "react-icons/rx";
 import styles from "./style.module.scss";
+import { SearchProductsParams } from "services/features/products/useProducts";
 
 export interface SearchWithFilterProps {
-  filterProducts: (phrase: string) => void;
-  clearFilters: () => void;
+  onSearchProducts: (params: SearchProductsParams) => void;
 }
 
 const INIT_SEARCHED_PHRASE = "";
 
 export function SearchWithFilter({
-  filterProducts,
-  clearFilters,
+  onSearchProducts,
 }: SearchWithFilterProps): JSX.Element {
   const [searchedPhrase, setSearchedPhrase] =
     useState<string>(INIT_SEARCHED_PHRASE);
 
   useEffect(() => {
     if (searchedPhrase === INIT_SEARCHED_PHRASE) {
-      clearFilters();
+      onSearchProducts({ phrase: searchedPhrase });
     }
   }, [searchedPhrase]);
 
@@ -30,12 +29,12 @@ export function SearchWithFilter({
   };
 
   const handleSearch = () => {
-    filterProducts(searchedPhrase);
+    onSearchProducts({ phrase: searchedPhrase });
   };
 
   const handleClearFilter = () => {
     setSearchedPhrase(INIT_SEARCHED_PHRASE);
-    clearFilters();
+    onSearchProducts({ phrase: INIT_SEARCHED_PHRASE });
   };
 
   return (

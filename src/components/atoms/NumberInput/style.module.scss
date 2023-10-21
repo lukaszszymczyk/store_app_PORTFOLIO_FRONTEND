@@ -3,10 +3,8 @@
 .numberInput {
   outline: none;
   border: 2px solid $color-background-secondary;
-  border-right: none;
   background-color: $color-background-white;
   padding: 0;
-  width: calc(3rem - 4px);
   height: calc(3rem - 4px);
   text-align: center;
 }

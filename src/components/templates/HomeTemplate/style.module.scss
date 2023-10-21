@@ -4,4 +4,14 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+
+  &Content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    @media (max-width: $max-mobile-width) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
 }

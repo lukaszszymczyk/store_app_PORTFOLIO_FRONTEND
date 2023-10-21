@@ -12,3 +12,11 @@ export interface Product {
   image: string;
   rating: Rating;
 }
+
+export type FilterType = "category" | "minPrice" | "maxPrice";
+
+export type Filters = Record<FilterType, string | number>;
+
+export interface FilterSettings {
+  categoryOptions: string[];
+}
