@@ -1,12 +1,14 @@
 import React from "react";
-import { FilterCategory } from "components/molecules/FilterCategory/FilterCategory";
-import { FilterPrice } from "components/molecules/FilterPrice/FilterPrice";
+import {
+  FilterCategory,
+} from "components/molecules/FilterCategory/FilterCategory";
 import { Filters, FilterSettings } from "types/product";
+import { SearchProductsParams } from "services/features/products/useProducts";
 
 export interface ProductFiltersProps {
   filterSettings: FilterSettings;
   selectedFilters: Filters;
-  onSearchProducts: (params: { phrase?: string; filters?: Filters }) => void;
+  onSearchProducts: (params: SearchProductsParams) => void;
 }
 
 export function ProductFilters({
@@ -21,7 +23,6 @@ export function ProductFilters({
         selectedFilters={selectedFilters}
         onSearchProducts={onSearchProducts}
       />
-      <FilterPrice></FilterPrice>
     </div>
   );
 }

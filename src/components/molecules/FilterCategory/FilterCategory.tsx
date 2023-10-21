@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./style.module.scss";
 import { Filters, FilterSettings, FilterType } from "types/product";
+import { SearchProductsParams } from "services/features/products/useProducts";
 
 export interface FilterCategoryProps {
   filterSettings: FilterSettings;
   selectedFilters: Filters;
-  onSearchProducts: (params: { phrase?: string; filters?: Filters }) => void;
+  onSearchProducts: (params: SearchProductsParams) => void;
 }
 
 export function FilterCategory({
@@ -27,13 +28,13 @@ export function FilterCategory({
       </div>
       <div className={styles.filterCategoryList}>
         {filterSettings.categoryOptions.map((category, index) => (
-          <span
+          <button
             className={styles.filterCategoryListItem}
             key={index}
             onClick={() => handleSelectCategory("category", category)}
           >
             {category}
-          </span>
+          </button>
         ))}
       </div>
     </div>

@@ -5,13 +5,17 @@ const isPhraseIncluded = (product: Product, searchPhrase: string): boolean => {
 };
 
 const isIncludedInFilters = (product: Product, selectedFilters: Filters) => {
-  if (selectedFilters.category && product.category !== selectedFilters.category)
-    return false;
-  if (selectedFilters.minPrice && product.price < selectedFilters.minPrice)
-    return false;
-  if (selectedFilters.maxPrice && product.category > selectedFilters.maxPrice)
-    return false;
-  return true;
+  switch (true) {
+    case selectedFilters.category &&
+      product.category !== selectedFilters.category:
+      return false;
+    case selectedFilters.minPrice && product.price < selectedFilters.minPrice:
+      return false;
+    case selectedFilters.maxPrice && product.price > selectedFilters.maxPrice:
+      return false;
+    default:
+      return true;
+  }
 };
 
 export const filterProducts = (
@@ -34,5 +38,5 @@ export const sliceProductsToCurrentPage = (
   return products.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
 };
 
-export const extractAvailableFilters = (allProducts: Product[]): string[] =>
+export const getUniqueCategories = (allProducts: Product[]): string[] =>
   Array.from(new Set(allProducts.map((product) => product.category)).values());

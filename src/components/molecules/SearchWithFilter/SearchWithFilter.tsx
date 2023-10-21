@@ -4,10 +4,10 @@ import { SearchInput } from "components/atoms/SearchInput/SearchInput";
 import { BsSearch } from "react-icons/bs";
 import { RxCross1 } from "react-icons/rx";
 import styles from "./style.module.scss";
-import { Filters } from "types/product";
+import { SearchProductsParams } from "services/features/products/useProducts";
 
 export interface SearchWithFilterProps {
-  onSearchProducts: (params: { phrase?: string; filters?: Filters }) => void;
+  onSearchProducts: (params: SearchProductsParams) => void;
 }
 
 const INIT_SEARCHED_PHRASE = "";

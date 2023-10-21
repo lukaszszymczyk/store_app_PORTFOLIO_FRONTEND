@@ -36,6 +36,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "code-formatter:fix": "npm run lint:fix & npm run prettier:fix"
   },
+  "type": "module",
   "eslintConfig": {
     "extends": [
       "react-app",

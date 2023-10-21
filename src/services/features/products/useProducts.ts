@@ -1,17 +1,19 @@
-import { Filters, FilterSettings, FilterType, Product } from "types/product";
+import { Filters, FilterSettings, Product } from "types/product";
 import { useState } from "react";
 import {
-  extractAvailableFilters,
+  getUniqueCategories,
   filterProducts,
   sliceProductsToCurrentPage,
 } from "services/features/products/utils/filter";
 import { PageSelectProps } from "components/molecules/PageSelect/PageSelect";
 
+export type SearchProductsParams = { phrase?: string; filters?: Filters };
+
 export interface UseProductsOutput {
   currentPageProducts: Product[];
   filterSettings: FilterSettings;
   selectedFilters: Filters;
-  searchProducts: (params: { phrase?: string; filters?: Filters }) => void;
+  searchProducts: (params: SearchProductsParams) => void;
   pageSelectProps: PageSelectProps;
 }
 
@@ -22,9 +24,7 @@ const INIT_PHRASE = "";
 export const useProducts = (allProducts: Product[]): UseProductsOutput => {
   const [currentPageIndex, setCurrentPageIndex] = useState(INIT_PAGE_INDEX);
   const [searchPhrase, setSearchPhrase] = useState(INIT_PHRASE);
-  const [selectedFilters, setSelectedFilters] = useState<Filters>(
-    {} as Filters
-  );
+  const [selectedFilters, setSelectedFilters] = useState({} as Filters);
 
   const filteredProducts = filterProducts(
     allProducts,
@@ -32,7 +32,7 @@ export const useProducts = (allProducts: Product[]): UseProductsOutput => {
     selectedFilters
   );
   const filterSettings: FilterSettings = {
-    categoryOptions: extractAvailableFilters(allProducts),
+    categoryOptions: getUniqueCategories(allProducts),
   };
 
   const currentPageProducts = sliceProductsToCurrentPage(
@@ -41,7 +41,7 @@ export const useProducts = (allProducts: Product[]): UseProductsOutput => {
     PAGE_SIZE
   );
 
-  const searchProducts = (params: { phrase?: string; filters?: Filters }) => {
+  const searchProducts = (params: SearchProductsParams) => {
     setCurrentPageIndex(INIT_PAGE_INDEX);
     if (params.phrase) {
       setSearchPhrase(params.phrase);

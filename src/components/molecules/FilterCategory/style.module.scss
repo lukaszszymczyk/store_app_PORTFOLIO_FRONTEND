@@ -22,6 +22,8 @@
     flex-direction: column;
 
     &Item {
+      border: none;
+      background: none;
       padding: $spacing-md;
       color: $color-text-secondary;
       font-size: 14px;
